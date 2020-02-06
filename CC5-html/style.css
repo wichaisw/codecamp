@@ -16,6 +16,16 @@ body {
     text-shadow:midnightblue 2px 2px 5px;
 }
 
+#profile-pic {
+    display:block; 
+    width: 400px; 
+    margin: 0 auto;
+}
+
+.rounded-corner {
+    border-radius: 10px
+}
+
 .flex-center {
     display: flex; 
     justify-content: space-around;
