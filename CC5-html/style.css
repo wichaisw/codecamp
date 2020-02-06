@@ -1,0 +1,30 @@
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.bgImage {
+    background-image: url('./img/reading-man-bg.webp');
+}
+
+.bg-gradient {
+    background-image: linear-gradient(to right, #092879, #00d4ff);
+}
+
+#motto {
+    font-family: 'Kanit', sans-serif;
+    color:aliceblue;
+    text-shadow:midnightblue 2px 2px 5px;
+}
+
+.flex-center {
+    display: flex; 
+    justify-content: space-around;
+}
+
+table, th, td {
+    border: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 5px;
+    background-color: aliceblue;
+};
