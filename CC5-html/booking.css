@@ -1,0 +1,63 @@
+body {
+    background-color:#c2c2c2;
+    font-family: sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    margin: 5rem auto;   
+    border: 2px solid  #f7f7f7;;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.horizontal-flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 10px 50px; 
+}
+
+input, select {
+    height: 2rem;
+}
+
+select[name=city], 
+input[type=date] {
+    width: 9rem;
+    box-sizing: border-box;
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+
+label[for=currency] {
+    color: red;
+}
+
+input[name="quantity"],
+#currency  {
+    box-sizing: border-box;
+    border: 1px solid;
+    padding: 4px;
+    width: 4rem;
+    border-radius: 3px;
+}
+
+#search-container {
+    border-top: 1px solid grey;
+    padding: 1rem 0;
+    background-color: #f7f7f7;
+    padding: 15px 50px; 
+}
+
+#search-btn {
+    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, #ff6835, #e35223);
+    border: 1px solid #d95429;
+    border-radius: 3px;
+    padding: 8px 12px;
+}

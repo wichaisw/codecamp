@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+    <title>Book Flight</title>
+</head>
+<body>
+    <!-- main container -->
+    <div class="main-container">
+        <form action="#" method="GET" id="booking-form">
+            <!-- destination -->
+            <div class="horizontal-flex">
+                <!-- From box-->
+                <div>
+                    <label for="flying-from"><b>Flying from</b></label><br>
+                    <select name="city" id="flying-from">
+                        <option value="bangkok">Bangkok, Thailand</option>
+                        <option value="tokyo">Tokyo, Japan</option>
+                        <option value="beijing">Beijing, China</option>
+                        <option value="washingtion-dc">Washingtion DC, United States</option>
+                    </select>
+                </div>
+                <!-- To box-->
+                <div>
+                    <label for="flying-to"><b>to</b></label><br>
+                    <select name="city" id="flying-to">
+                        <option value="bangkok">Bangkok, Thailand</option>
+                        <option value="tokyo">Tokyo, Japan</option>
+                        <option value="beijing">Beijing, China</option>
+                        <option value="washingtion-dc">Washingtion DC, United States</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Booking Date -->
+            <div class="horizontal-flex">
+                <div>
+                    <label for="departing-date"><b>Departing</b></label><br>
+                    <input type="date" name="date" id="departing-date">
+                </div>
+                <div class="input-padding">
+                    <label for="returning-date"><b>Returning</b></label><br>
+                    <input type="date" name="date" id="returning-date">
+                </div>
+            </div>
+            
+            <!-- customer quantity -->
+            <div class="horizontal-flex">
+                <div>
+                    <label for="adult-seat"><b>Adult</b></label><br>
+                    <input type="number" name="quantity" id="adult-seat" min="0" max="20" value="1">
+                </div>
+                <div>
+                    <label for="child-seat"><b>Child</b></label><br>
+                    <input type="number" name="quantity" id="child-seat" min="0" max="20" value="0">
+                </div>
+                <div>
+                    <label for="infant-seat"><b>Infant</b></label><br>
+                    <input type="number" name="quantity" id="infant-seat" min="0" max="20" value="0">
+                </div>
+                <div>
+                    <label for="currency"><b>Currency</b></label><br>
+                    <select name="currency" id="currency">
+                        <option value="thai-baht">THB</option>
+                        <option value="japanese-yen">JPY</option>
+                        <option value="chinese-renminbi">RMB</option>
+                        <option value="us-dollar">USD</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <!-- search for available flight -->
+        <div id="search-container">
+            <button type="submit" form="booking-form" id="search-btn"><b>SEARCH</b></button>
+        </div>
+    </div>
+</body>
+</html>
