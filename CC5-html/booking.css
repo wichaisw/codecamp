@@ -52,6 +52,8 @@ input[name="quantity"],
     padding: 1rem 0;
     background-color: #f7f7f7;
     padding: 15px 50px; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #search-btn {
