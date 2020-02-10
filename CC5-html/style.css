@@ -1,13 +1,33 @@
 body {
     font-family: 'Bai Jamjuree', sans-serif;
+    margin: 0 auto;
+    background-color: #91ffda;
 }
 
-.bgImage {
+nav > ul {
+    display: flex;
+    margin-top: 0;
+    list-style: none;
+    background-image: linear-gradient(to bottom, #bdffe9,#117352);
+    margin-bottom: 5vh;
+}
+
+nav > ul li {
+    padding: 20px;
+}
+
+nav > ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav > ul li a:hover {
+    text-shadow: 2px 2px 4px #000000
+}
+
+.bg-image {
     background-image: url('./img/reading-man-bg.webp');
-}
-
-.bg-gradient {
-    background-image: linear-gradient(to right, #092879, #00d4ff);
 }
 
 #motto {
@@ -16,19 +36,22 @@ body {
     text-shadow:midnightblue 2px 2px 5px;
 }
 
-#profile-pic {
-    display:block; 
-    width: 400px; 
-    margin: 0 auto;
+.vertical-center {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.pic-description-margin {
+    margin: 0px 0px;
+    padding: 0px;
+}
+
+.img-shrink {
+    width: 20vw;
 }
 
 .rounded-corner {
     border-radius: 10px
-}
-
-.flex-center {
-    display: flex; 
-    justify-content: space-around;
 }
 
 table, th, td {
