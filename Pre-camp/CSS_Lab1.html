@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/CSS" href="./CSS_Lab1.css">
+    <title>CSS Lab #1</title>
+</head>
+<body>
+    <!-- tooltip -->
+    <h2>Tooltips</h2>
+    <p>กล่องข้อความให้คำแนะนำผู้ใช้ แสดงผลเมื่อเลื่อนเมาส์ไปวางเหนือจุดที่กำหนด</p>
+    <p>เลื่อนเมาส์มาวางเหนือข้อความด้านล่างเพื่อทดลองใช้ tooltip</p>
+    <div class="example-box">
+        <p>ตัวอย่าง</p>
+        <div class="tooltip">
+            <span>Try this tooltip</span>
+            <span class="tooltip-text">This is a tooltip </span>
+        </div>
+    </div>
+    <br>
+
+    <!-- Pagination -->
+    <h2>Pagination</h2>
+    <p>เลขหน้าสำหรับเว็บไซต์ที่มีเนื้อหาในเลยืเอาต์เดียวกันหลายหน้า เพื่อให้ผู้ใช้เลือกหน้าที่ต้องการใช้งานได้ มักมีหน้าแรกสุด หน้าท้ายสุด และหน้าใกล้เคียงหน้าที่ใช้งานอยู่</p>
+    <div class="example-box">
+        <p>ตัวอย่าง</p>
+        <div>
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">10</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+
+    <h2>Navigation Bar</h2>
+    <p>แถบเมนูสำหรับเลือกไปยังหน้าหลักๆ ของเว็บไซต์ มักเป็นแถบพาดยาวด้านบนหัวเว็บ หรือด้านข้างเว็บ มักปรากฎในทุกหน้าของไซต์นั้นเพื่อให้ไปยังส่วนที่ต้องการใช้งานได้ทันที</p>
+    <div class="example-box">
+        <p>ตัวอย่าง</p>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Friends</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <h2>Dropdown</h2>
+    <p>รายการเมนูย่อยที่มักแสดงผลเมื่อลากเมาส์มาวางเหนือจุดที่กำหนด มักใช้แสดงผลลิสต์เมนูในแนวตั้ง ในกรณีที่พื้นที่แนวนอนมีจำกัด</p>
+    <div class="example-box" style="height: 300px">
+        <p>ตัวอย่าง</p>
+        <div class="dropdown">
+            <div class="zone">
+                <span>Dropdown Menu</span>
+            </div>
+            
+            <div class="dropdown-content"><a href="#">Link 1</a></div>
+            <div class="dropdown-content"><a href="#">Link 2</a></div>
+            <div class="dropdown-content"><a href="#">Link 3</a></div>
+        </div>
+    </div>
+</body>
+</html>

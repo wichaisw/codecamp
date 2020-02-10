@@ -1,0 +1,82 @@
+/* CSS tooltip */
+.example-box {
+    border: 2px solid black;
+    width: 500px;
+    height: 120px;
+    box-sizing: border-box;
+}
+
+.tooltip {
+    width: 100px;
+}
+
+.tooltip-text {
+    display: block;
+    position: absolute;
+    top: 140px;
+    background-color: grey;
+
+    height: 20px;
+    padding: 2px;
+    border-bottom: 1px solid grey;
+    opacity: 0;
+}
+
+.tooltip:hover .tooltip-text{
+    visibility: visible;
+    top: 160px;
+    opacity: 1;
+}
+
+/* Navigation Bar */
+
+nav > ul {
+    display: flex;
+    margin-top: 0;
+    list-style: none;
+    background-image: linear-gradient(to bottom, #bdffe9,#117352);
+    margin-bottom: 5vh;
+}
+
+nav > ul li {
+    padding: 20px;
+}
+
+nav > ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav > ul li a:hover {
+    text-shadow: 2px 2px 4px #000000
+}
+
+/* Dropdown */
+
+.dropdown {
+    width: 200px;
+}
+
+.zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    width: 200px;
+    height: 50px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #f5f5f5;
+    border-bottom: 2px solid grey;
+    width: 200px;
+    height: 50px;
+}
+
+.dropdown-content {
+    display: none;
+}
