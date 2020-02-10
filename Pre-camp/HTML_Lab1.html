@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 3px 5px;
+        }
+    </style>
+    <title>LAB1: HTML</title>
+</head>
+
+<body>
+    <table>
+        <caption>
+            <h2>1. attribute</h2>
+        </caption>
+        <thead>
+            <th>tag Name</th>
+            <th>attribute</th>
+            <th>การใช้งาน</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>&lt;h&gt;</th>
+                <td></td>
+                <td>ไม่มี attribute ที่ซัพพอร์ตใน html5</td>
+
+            </tr>
+
+            <tr>
+                <th>&lt;p&gt;</th>
+                <td></td>
+                <td>ไม่มี attribute ที่ซัพพอร์ตใน html5</td>
+            </tr>
+
+            <tr>
+                <th>&lt;div&gt;</th>
+                <td></td>
+                <td>ไม่มี attribute ที่ซัพพอร์ตใน html5</td>
+            </tr>
+
+            <tr>
+                <th rowspan="10">&lt;img&gt;</th>
+                <td>alt</td>
+                <td>กำหนดข้อความที่แสดงแทน เมื่อหน้าเว็บไม่แสดงรูปภาพ</td>
+            </tr>
+            <tr>
+                <td>crossorigin</td>
+                <td>อนุญาตให้เว็บไซต์อื่นดึงภาพไปใช้งานได้</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>กำหนดความสูงของรูปภาพ</td>
+            </tr>
+            <tr>
+                <td>ismap</td>
+                <td>เชื่อมรูปภาพเข้ากับลิงก์แบบ server-side ข้อมูลการคลิกจะถูกส่งไปยัง server</td>
+            </tr>
+            <tr>
+                <td>longdesc</td>
+                <td>บรรยายรายละเอียดของรุปภาพอย่างยาวกว่า attribute alt</td>
+            </tr>
+            <tr>
+                <td>sizes</td>
+                <td>กำหนดขนาดของรูปภาพ</td>
+            </tr>
+            <tr>
+                <td>src</td>
+                <td>กำหนด url ที่มาของรูปภาพ</td>
+            </tr>
+            <tr>
+                <td>srcset</td>
+                <td>กำหนด url ที่มาของรูปภาพในสถานการณ์อื่น เช่น หน้าจอมีขนาดใหญ่ขึ้นหรือเล็กลง</td>
+            </tr>
+            <tr>
+                <td>usemap</td>
+                <td>เชื่อมรูปภาพเข้ากับลิงก์แบบ client-side สามารถกำหนดพื้นที่ที่คลิกได้ ไม่จำเป็นต้องคลิกได้ทั้งภาพ
+                    เช่น กำหนดพื้นที่ที่คลิกได้เป็นวงกลมในภาพ</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>กำหนดความกว้างของรูปภาพ</td>
+            </tr>
+
+            <tr>
+                <th rowspan="9">&lt;a&gt;</th>
+                <td>download</td>
+                <td>ให้ดาวน์โหลดไฟล์ตามลิงก์ที่กำหนดเมื่อคลิกูปภาพ</td>
+            </tr>
+            <tr>
+                <td>href</td>
+                <td>ระบุเว็บเพจที่จะลิงก์ไปเมื่อรูปภาพถูกคลิก</td>
+            </tr>
+            <tr>
+                <td>hreflang</td>
+                <td>ระบุภาษาของหน้าเว็บที่จะลิงก์ไป</td>
+            </tr>
+            <tr>
+                <td>media</td>
+                <td>กำหนดค่าการแสดงผลหน้าที่จะลิงก์ไปให้เหมาะสำหรับอุปกรณ์ชนิดใดชนิดหนึ่งใดโดยเฉพาะ</td>
+            </tr>
+            <tr>
+                <td>ping</td>
+                <td>ส่ง ping เมื่อลิงกืถุกคลิก ใช้สำหรับนับจำนวนการคลิก</td>
+            </tr>
+            <tr>
+                <td>referrerpolicy</td>
+                <td>กำหนดว่าจะส่งหรือไม่ส่ง referrer ไปยังลิงก์ปลายทาง ว่าการลิงก์นี้มาจากเว็บไหน</td>
+            </tr>
+            <tr>
+                <td>rel</td>
+                <td>ระบุความสัมพันธ์ระหว่างหน้าเว็บปัจจุบันกับหน้าที่ลิงก์ไป</td>
+            </tr>
+            <tr>
+                <td>target</td>
+                <td>กำหนดว่าจะเปิดลิงก์นี้ที่ไหน เช่น ในหน้าต่างใหม่</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>ระบุ media type ของหน้าที่ลิงก์ไป เช่น เป็นเว็บ html หรือ เป็นไฟล์ script</td>
+            </tr>
+
+            <tr>
+                <th>&lt;ul&gt;</th>
+                <td></td>
+                <td>ไม่มี attribute ที่ซัพพอร์ตใน html5</td>
+            </tr>
+
+            <tr>
+                <th rowspan="3">&lt;ol&gt;</th>
+                <td>reversed</td>
+                <td>กำหนดให้ ordered list เรียงลำดับแบบนับย้อนจากมากไปน้อย</td>
+            </tr>
+            <tr>
+                <td>start</td>
+                <td>กำหนดค่าว่าจะให้ ordered list เริ่มนับจากลำดับที่เท่าไร</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>กำหนดประเภทของ ordered list ลิสต์ เช่น นับเป็นตัวเลขอาราบิก ลขโรมัน หรืออักษรอัลฟาเบต</td>
+            </tr>
+
+            <tr>
+                <th>&lt;table&gt;</th>
+                <td></td>
+                <td>ไม่มี attribute ที่ซัพพอร์ตใน html5</td>
+            </tr>
+
+            <tr>
+                <th rowspan="8">&lt;form&gt;</th>
+                <td>accept-charset</td>
+                <td>กำหนดฟอนต์และค่าของรูปแบบอักษรสำหรับข้อความในฟอร์ม</td>
+            </tr>
+            <tr>
+                <td>action</td>
+                <td>กำหนดว่าให้ส่งข้อมูลในฟอร์มไปยัง url ใด หลังผู้ใช้กด submit</td>
+            </tr>
+            <tr>
+                <td>autocomplete</td>
+                <td>กำหนดว่าจะอนุญาตให้เบราเซอร์ autocomplete ฟอร์มหรือไม่</td>
+            </tr>
+            <tr>
+                <td>enctype</td>
+                <td>กำหนดว่าจะ encode ข้อมูลในฟอร์มอย่างไรก่อนส่งไปยังเซิร์ฟเวอร์</td>
+            </tr>
+            <tr>
+                <td>method</td>
+                <td>กำหนด html method ที่เบราเซอร์ใช้รับส่งข้อมูลกับเซิร์ฟเวอร์</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>ระบุชื่อฟอร์ม</td>
+            </tr>
+            <tr>
+                <td>novalidate</td>
+                <td>ปิดการตรวจสอบค่าฟอร์มทั้งหมด รวมถึงการตรวจสอบด้วย attribute อื่นด้วย</td>
+            </tr>
+            <tr>
+                <td>target</td>
+                <td>กำหนดว่าจะเปิดหน้าเว็บหลัง submit ในหน้าต่างใด</td>
+            </tr>
+
+            <tr>
+                <th rowspan="11">&lt;button&gt;</th>
+                <td>autofocus</td>
+                <td>เมื่อหน้าเว็บโหลด ให้เน้นการแสดงผลที่ปุ่มซึ่งมี attribute นี้</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>กำหนดให้ปุ่มนี้คลิกไม่ได้</td>
+            </tr>
+            <tr>
+                <td>form</td>
+                <td>ระบุว่าปุ่มนี้สัมพันธ์กับฟอร์มไหน แม้แท็ก button จะอยู่นอก form</td>
+            </tr>
+            <tr>
+                <td>formaction</td>
+                <td>กำหนดว่าจะส่งข้อมูลในฟอร์มไปยัง url ใด ใช้สำหรับ type="submit" เท่านั้น</td>
+            </tr>
+            <tr>
+                <td>formenctype</td>
+                <td>กำหนดว่าจะ encode ข้อมูลในฟอร์มอย่างไรก่อนส่งไปยังเซิร์ฟเวอร์ ใช้สำหรับ type="submit" เท่านั้น</td>
+            </tr>
+            <tr>
+                <td>formmethod</td>
+                <td>กำหนด html method ที่เบราเซอร์ใช้รับส่งข้อมูลกับเซิร์ฟเวอร์เมื่อ submit ด้วยปุ่ม ใช้สำหรับ
+                    type="submit" เท่านั้น</td>
+            </tr>
+            <tr>
+                <td>formnovalidate</td>
+                <td>ปิดการตรวจสอบค่าฟอร์มทั้งหมด รวมถึงการตรวจสอบด้วย attribute อื่นด้วย ใช้สำหรับ type="submit"
+                    เท่านั้น</td>
+            </tr>
+            <tr>
+                <td>formtarget</td>
+                <td>ระบุว่าจะเปิด url หน้าเว็บหลัง submit ด้วยปุ่มผ่านหน้าต่างใด ใช้สำหรับ type="submit" เท่านั้น</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>ระบุชื่อของปุ่ม</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>กำหนด type ของปุ่ม</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>ระบุข้อความที่แสดงบนปุ่ม</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <br>
+
+    <table>
+        <caption>
+            <h2>2. differentiation tag</h2>
+        </caption>
+        <thead>
+            <th></th>
+            <th>ความเหมือน</th>
+            <th>ความต่าง</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>&lt;hr> & &lt;br></th>
+                <td>เป็น empty tag ที่แสดงผลโดยขึ้นบรรทัดใหม่เหมือนกัน</td>
+                <td>
+                    hr (horizontal rule) เป็น block-level element แสดผงลเป็นขีดแนวนอนแบ่ง section<br>
+                    br (break) เป็น inline element ใช้กำหนดให้แสดงข้อความหลังแท็กนี้ในบรรทัดใหม่
+                </td>
+            </tr>
+
+            <tr>
+                <th>&lt;ul> & &lt;ol></th>
+                <td>ใช้เพื่อแสดงผลข้อมูลในแท็ก li เป็นลิสต์รายการเหมือนกัน</td>
+                <td>
+                    ul จะแสดงผลแท็ก li เป็น bullet ไม่กำกับลำดับของข้อมูล<br>
+                    ol จะแสดงผลแท็ก li โดยกำกับลำดับข้อมูลด้วย เช่น ลำดับตัวเลขหรืออักษรอัลฟาเบต
+                </td>
+            </tr>
+
+            <tr>
+                <th>&lt;select> & &lt;checkbox> & &lt;radio button></th>
+                <td>ใช้แสดงผลให้ผู้ใช้งานเลือกตอบจากตัวเลือกที่กำหนดให้เหมือนกัน</td>
+                <td>
+                    select เป็นรายการแบบ drop-down เลือกตอบได้แค่ตัวเลือกเดียว จำเป็นต้องเลือกตอบ<br>
+                    checkbox เป็นรายการแบบลิสต์ เลือกตอบได้หลายตัวเลือก หรือไม่เลือกเลยก็ได้<br>
+                    radio button เป็นรายการแบบลิสต์ เลือกตอบได้แค่ตัวเลือกเดียว จำเป็นต้องเลือกตอบ
+                </td>
+            </tr>
+
+            <tr>
+                <th>&lt;div> & &lt;span></th>
+                <td>ใช้กำหนดแบ่ง section ของข้อมูลในหน้าเพจเหมือนกัน</td>
+                <td>div เป็น block-level element<br>
+                    span เป็น inline element
+                </td>
+            </tr>
+            <tr>
+                <th>&lt;script> & &lt;style></th>
+                <td>ใช้กำหนดคุณสมบัติและการแสดงผลของหน้าเว็บ ด้วยการกำหนดภายใน html เหมือนกัน</td>
+                <td>script ใช้จัดการการปฏิสัมพันธ์กับเว็บและแสดงผล action ต่างๆ ด้วยภาษาสคริปต์อย่าง JavaScript หรือ
+                    TypeScript<br>
+                    style ใช้ปรับแต่งการแสดงผลในหน้าเว็บด้วย CSS
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <table>
+        <caption>
+            <h2>3. input type</h2>
+        </caption>
+        <thead>
+            <th>input type</th>
+            <th>ลักษณะการทำงาน</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>button</th>
+                <td>สร้างปุ่มเพื่อรับข้อมูลการคลิก</td>
+            </tr>
+            <tr>
+                <th>checkbox</th>
+                <td>เป็นตัวเลือกแบบลิสต์ ผู้ใช้งานสามารถเลือกตอบได้หลายตัวเลือกหรือไม่เลือกเลยก็ได้</td>
+            </tr>
+            <tr>
+                <th>color</th>
+                <td>ให้ผู้ใช้งานเลือกสีจากแถบสี</td>
+            </tr>
+            <tr>
+                <th>date</th>
+                <td>ให้ผู้ใช้เลือกเดือน วัน และปีที่ต้องการระบุ</td>
+            </tr>
+            <tr>
+                <th>datetime-local</th>
+                <td>รับข้อมูลเดือน วัน ปี และเวลา</td>
+            </tr>
+            <tr>
+                <th>email</th>
+                <td>รับข้อมูลประเภท email เท่านั้น จำเป็นต้องมีเครื่องหมาย @</td>
+            </tr>
+            <tr>
+                <th>file</th>
+                <td>รับและอัพโหลดไฟล์ที่ผู้ใช้เลือก</td>
+            </tr>
+            <tr>
+                <th>hidden</th>
+                <td>ไม่แสดงการรับ input ให้ผู้ใช้งานเห็น แต่หากกำหนดให้ส่งข้อมูล ข้อมูลนั้นจะยังถูกส่งไปยังเซิร์ฟเวอร์
+                </td>
+            </tr>
+            <tr>
+                <th>image</th>
+                <td>แดงรูปภาพ และรับข้อมูลตำแหน่งที่รูปภาพถูกคลิก</td>
+            </tr>
+            <tr>
+                <th>month</th>
+                <td>รับข้อมูลเดือนและปีจากผู้ใช้งาน</td>
+            </tr>
+            <tr>
+                <th>number</th>
+                <td>รับข้อมูลประเภทตัวเลข กำหนดได้ว่าให้เลือกตัวเลขใน range ไหน</td>
+            </tr>
+            <tr>
+                <th>password</th>
+                <td>รับข้อมูลโดยซ่อนข้อมูลไม่ให้เห็นจากหน้าจอ และไม่สามารถ copy ได้</td>
+            </tr>
+            <tr>
+                <th>radio</th>
+                <td>กำหนดหลายตัวเลือกให้ผู้ใช้เลือกได้เพียงตัวเลือกเดียว โดยจำเป็นต้องเลือก</td>
+            </tr>
+            <tr>
+                <th>range</th>
+                <td>รับข้อมูล range ของค่าตัวเลข โดยให้เลื่อนเลือกจุดใดจุดหนึ่งบนระนาบ</td>
+            </tr>
+            <tr>
+                <th>reset</th>
+                <td>รีเซ็ตค่าที่ถูกกรอกให้กลับไปเป็นค่าเริ่มต้นที่ตั้งไว้</td>
+            </tr>
+            <tr>
+                <th>search</th>
+                <td>ใช้สำหรับรับข้อมูลที่ต้องการค้นหา แสดงผลแบบเดียวกับ text field</td>
+            </tr>
+            <tr>
+                <th>submit</th>
+                <td>้ใช้ส่งข้อมูลไปยังที่ที่ฟอร์มกำหนดไว้</td>
+            </tr>
+            <tr>
+                <th>tel</th>
+                <td>รับข้อมูลหมายเลขโทรศัพท์ สามารถกำหนดแพทเทิร์นตัวเลขที่ต้องการให้กรอกได้</td>
+            </tr>
+            <tr>
+                <th>text</th>
+                <td>รับข้อมูลประเภทข้อความทั่วไป 1 บรรทัด</td>
+            </tr>
+            <tr>
+                <th>time</th>
+                <td>รับข้อมูลเวลาที่ผู้ใช้ระบุ</td>
+            </tr>
+            <tr>
+                <th>url</th>
+                <td>รับข้อมูลประเภท url โดยจำเป็นต้องกรอก protocal ด้วย</td>
+            </tr>
+            <tr>
+                <th>week</th>
+                <td>รับข้อมูลสัปดาห์และปีจากผู้ใช้งาน โดยเลือกสัปดาห์เป็นตัวเลข 1 ถึง 52</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
