@@ -1,0 +1,168 @@
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: #eeeeee ;
+    height: 64px;
+    justify-content: center;
+}
+
+.main-nav {
+    display: flex;
+    list-style-type: none;
+}
+
+.main-nav li a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+#logo-container {
+    position: relative;
+    top: -16px;
+}
+
+#nav-logo {
+    padding: 0px 16px 8px 16px;
+    width: 132px;
+    height: 84px;
+}
+
+/* ads banner */
+
+.head-banner-ads {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0px;
+}
+
+/* Top Stories Header line */
+.top-header-container {
+    height: 50px;
+}
+
+.top-header {
+    height: 50px;
+    text-align: center; 
+    height: auto;
+    width: auto;
+}
+
+.header-line {
+    display: block;
+    position: relative;
+    top: 25px;
+    border-top: 4px solid #fff200;
+    border-right: 4px solid #fff200;
+    border-left: 4px solid #fff200;
+    height: 50px;
+    content: " ";
+}
+
+.top-header h2 {
+    display: inline;
+    position: relative;
+    padding: 16px;
+    /* own top padding + line position (16+25) */
+    top: -41px; 
+    background-color: white;   
+}
+
+
+/* Top story articles */
+
+#top-news-section {
+    margin: 20px 10em;
+}
+
+#top-news-section h2,
+#top-news-section h1 {
+    margin: 0px;
+    width: auto;
+    padding-bottom: 5.4px;
+}
+
+#top-news-section article {
+    padding: 10px;
+    margin: 0px 10px;
+}
+
+#top-news-section article div {
+    padding: 24px 0px;
+}
+
+.top-news-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    margin: 0px;
+    padding: 0px 16px;
+}
+
+.top-news-border {
+    border-bottom: 1px solid gray;
+}
+
+.center-bottom-news {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 20px 0px;
+    margin: 0px;
+}
+
+.center-bottom-news-text {
+    padding: 0px 24px 0px 0px;
+    margin: 0;
+}
+
+.fit-img {
+    width: 100%;
+}
+
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/* podcast section */
+.podcast-section-box {
+    background-color: #eeeeee;
+    padding: 32px 16px;
+}
+
+#podcast-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 176px;
+}
+
+.podcast-title {
+    font-size: 2em;
+}
+
+#podcast-section button {
+    background-color: #fff200;
+    border: none;
+    padding: 10px;
+}
+
+.podcast-cover {
+    width: 12vw;
+}
+
+.podcast-synopsis {
+    width: 30vw;
+}
