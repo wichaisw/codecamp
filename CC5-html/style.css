@@ -36,6 +36,7 @@ nav > ul li a:hover {
     text-shadow:midnightblue 2px 2px 5px;
 }
 
+/* profile.html */
 .vertical-center {
     margin: 20px auto;
     text-align: center;
@@ -52,6 +53,12 @@ nav > ul li a:hover {
 
 .rounded-corner {
     border-radius: 10px
+}
+
+/* friend.html */
+
+table {
+    margin: 5vh auto 10vh auto;
 }
 
 table, th, td {
