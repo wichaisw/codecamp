@@ -1,0 +1,58 @@
+html, body {
+    height: 100%;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    
+
+}
+
+.bg {
+    background-image: url("./img/phonebook-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position: bottom;
+    height: 100%;
+}
+
+
+h2 {
+    text-align: center;
+    color: rgb(174, 209, 255);
+    text-shadow: 0 0 5px rgb(0, 82, 175), 0 0 10px rgb(176, 213, 255);
+    margin: 0;
+    padding: 1em;
+}
+
+table {
+    margin:  auto;
+    height: 80%;  
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 0.5em;
+    } 
+}
+
+table, th, tr, td {
+    border: 1px solid rgb(39, 0, 110);
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    box-sizing: border-box;
+    padding: 2px 1em;
+}
+
+th {
+    background-color:rgba(162, 207, 237, 1);
+}
+
+tr {
+    background-color: rgba(162, 207, 237, 0.7);
+}
+
+th:nth-child(2), td:nth-child(2) {
+    text-align: center;
+}
