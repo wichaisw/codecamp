@@ -1,0 +1,12 @@
+.hidden-menu {
+    display: none;
+
+}
+
+.menu-trigger {
+    width: 200px;
+    height: 50px;
+}
+.menu-trigger:hover .hidden-menu {
+    display: block;
+}
