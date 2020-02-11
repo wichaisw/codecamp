@@ -1,0 +1,172 @@
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+section div {
+    margin: 1em;
+}
+
+.center-text {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 1em auto;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color:red;
+}
+
+/* animation 1 color */
+.animation-box1:hover {
+    animation-name: box1;
+    animation-duration: 2s;
+}
+
+@keyframes box1 {
+    0% {color:black;}
+    50% {color:blue;}
+    100% {color: white;}
+}
+
+/* animation 2 width + delay*/
+.animation-box2:hover {
+    animation-name: box2;
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
+@keyframes box2 {
+    from {width: 200px;}
+    to {width: 400px;}
+}
+
+/* animation 3 border */
+.animation-box3:hover {
+    animation-name: box3;
+    animation-duration: 2s;
+    animation-direction: alternate;
+}
+
+@keyframes box3 {
+    from {border: 0px solid orange;}
+    to {border: 50px solid orange;}
+}
+
+/* animation 4 background color */
+.animation-box4:hover {
+    animation-name: box4;
+    animation-duration: 2s;
+}
+
+@keyframes box4 {
+    0% {background-color:red;}
+    50% {background-color:black;}
+    100% {background-color: blue;}
+}
+
+/* animation 5 position relative */
+.animation-box5 {
+    position: relative;
+}
+
+.animation-box5:hover {
+    animation-name: box5;
+    animation-duration: 2s;
+}
+
+@keyframes box5 {
+    0% {left:0px;}
+    50% {left:20px;}
+    100% {left:100px;}
+}
+
+/* animation 6 show-hidden */
+
+.animation-box6:hover {
+    animation-name: box6;
+    animation-duration: 2s;
+}
+
+@keyframes box6 {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/* animation direction | delay */
+
+/* d-normal */
+
+.d-normal-box {
+    position: relative;
+}
+
+.d-normal-box:hover {
+    animation-name: d-normal;
+    animation-duration: 5s;
+    animation-direction: normal;
+}
+
+@keyframes d-normal {
+    0% {left: 0px;}
+    10% {left: 10px;}
+    50% {left: 50px;}
+    70% {left: 70px;}
+    100% {left: 100px;}
+}
+
+/* d-reverse */
+.d-reverse-box {
+    position: relative;
+}
+
+.d-reverse-box:hover {
+    animation-name: d-reverse;
+    animation-duration: 5s;
+    animation-direction: reverse;
+}
+
+@keyframes d-reverse {
+    0% {left: 0px;}
+    10% {left: 10px;}
+    50% {left: 50px;}
+    70% {left: 70px;}
+    100% {left: 100px;}
+}
+
+/* de-alternate */
+.d-alternate-box {
+    position: relative;
+}
+
+.d-alternate-box:hover {
+    animation-name: d-alternate;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes d-alternate {
+    0% {left: 0px;}
+    10% {left: 10px;}
+    50% {left: 30px;}
+    70% {left: 50px;}
+    100% {left: 80px;}
+}
+
+/* timing + iteration animation */
+.animation-timing {
+    position: relative;
+    animation: timing-animate 3s 2s infinite ease-in-out;
+    /* animation-timing-function: cubic-bezier(0.1, 2, 1.5, 0.1 ); */
+}
+
+@keyframes timing-animate {
+    0% {top: 0px;}
+    10% {top: 100px;}
+    50% {top: 400px;}
+    70% {top: 600px;}
+    100% {top: 800px;}
+}
