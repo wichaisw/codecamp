@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Responsive Site Homework</title>
+</head>
+<body>
+    <header>
+        <img class="banner-img" src="./responsive-web-img/contact-banner.jpg" alt="banner-image">
+    </header>
+
+    <!-- main container -->
+    <div class="main-container">
+
+        <!-- form grid-->
+        <div class="form-container">
+            <h1>Contact us today</h1>
+            <form action="#" class="form-grid">
+                <div>
+                    <label for="name" (required)>Your Name</label><br>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Your Email (required)</label><br>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="subject-container">
+                    <label for="subject">Subject</label><br>
+                    <input type="text" id="subject">
+                </div>
+                <div class="message-container">
+                    <label for="message">Your Message</label><br>                    
+                    <textarea rows="8" id="message"></textarea>
+                </div>
+                <input type="button" value="SEND">
+                
+            </form>
+        </div>
+
+        <!-- about -->
+        <div class="about-text-container">
+            <p>
+                Pimclick is a full service web design and online marketing agency offering a unique blend of creativity and expertise within the entirety of the digital spectrum. With headquarters located in Paris, France and branch offices dispersed throughout major cities such as Dubai, Hong Kong, Casablanca and Bangkok.
+            </p>
+        </div>
+
+        <!-- showreel -->
+        <div class="showreel-container">
+            <div class="showreel-container">
+                <input type="checkbox" id="overlay-trigger">
+                <label for="overlay-trigger" style="margin: 0; width: 100%; height: 100%;">   
+                    <img class="showreel-overlay" src="./responsive-web-img/contact-video3.jpg" alt="video-img-overlay">
+                </label>
+                
+                
+                <iframe id="showreel-video" src="https://www.youtube.com/embed/r0q6a_9fg_Y" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+            </div>
+
+        <!-- services grid-->
+        <div class="services-container">
+            <div>
+                <strong class="ci-header">Digital <br> Strategy</strong>
+                <p> 
+                    Business Intelligence<br>
+                    SEO – Search Engine Optimization<br>
+                    SEM strategy<br>
+                    Digital Content<br>
+                    Branding Design<br>
+                    UX & UI Design<br>
+                    Product Prototype 
+                </p>
+            </div>
+            
+            <div>
+                <strong class="ci-header">Digital <br> Production</strong>
+                <p>
+                    WebSites & Microsites<br>
+                    Responsive Design / Development<br>
+                    Mobile APP & Games<br>
+                    Intranet & Extranet<br>
+                    Virtual & Augmented Reality<br>
+                    Interactive Installations                
+                </p>
+            </div>
+
+            <div>
+                <strong class="ci-header">E-Marketing</strong>
+                <p>
+                    BCampaigns management<br>
+                    Market research<br>
+                    User analysis<br>
+                    Brand activation<br>
+                    E-Commerce Development<br>
+                    Social Media strategy and<br>
+                    optimisation<br>
+                    Advocacy & Influencer                  
+                </p>
+            </div>
+
+            <div>
+                <strong class="ci-header">Graphic Design</strong>
+                <p>
+                    Creative Art direction<br>
+                    Branding & Identity<br>
+                    3D modeling / Animation<br>
+                    UI/UX design<br>
+                    Prints & Signaletics<br>
+                    Visual storytelling<br>
+                    Layouting & Infographics<br>
+                    Typography
+                </p>
+            </div>
+        </div>
+        <div class="services-bottom-grid">
+            <div>
+                <strong class="ci-header">Video <br> Production</strong>
+                <p>
+                    Campaigns management<br>
+                    Scripting / Story Boarding<br>
+                    Filming<br>
+                    Editing/Grading<br>
+                    Motion Design<br>
+                    Sound design
+                </p>
+            </div>
+
+            <div class="mobile-container" id="services-mobile-pic">
+                <img class="mobile-size-adjust" src="./responsive-web-img/mobile.png" alt="mobile-bg">     
+            </div>
+        </div>
+
+
+        <!-- client text section -->
+        <div class="client-container">
+            <p class="ci-header"><i>Our Clients</i></p>
+            <p>
+                We partner up with forward thinking clients,
+                being an extension of it’s marketing area.
+            </p>
+        </div>
+        <!-- client logo -->
+        <div>
+            <img src="./responsive-web-img/pimclick-logo-clients.jpg" alt="pimclick-client-logo">
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
