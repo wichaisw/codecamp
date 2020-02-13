@@ -4,6 +4,10 @@ body {
 
 }
 
+.header {
+    font-size: 3em;
+}
+
 .ci-header {
     color: #e91126;
 }
@@ -35,6 +39,10 @@ body {
     box-shadow: 5px 5px 20px #bebebe;
     width: 100%;
     font-size: 1.2em;
+}
+
+.form-container h1 { 
+    text-align: center;
 }
 
 .form-grid {
