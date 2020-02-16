@@ -1,16 +1,20 @@
 body {
     margin: 0 auto;
     height: 100%;
-
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    color: #636363;
 }
 
 .header {
     font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .ci-header {
     color: #e91126;
 }
+
 
 .banner-img {
     width: 100%;
@@ -20,30 +24,58 @@ body {
     z-index: -1;
 }
 
+
+/* fixed items */
+.fixed-logo-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-left: 3em;
+}
+
+.ci-logo {
+    color: #fc5424;
+    font-family: 'Arimo', sans-serif;
+    font-size: 3rem;
+    z-index: 1;
+}
+
+.pimclick-logo {
+    margin-top: 5em;
+}
+
+
 /* main-container */
 
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 15%;
+    margin: 0 17%;
+    /* margin: 0 auto;
+    max-width: 70%; */
+
 }
 
 /* form */
 .form-container {
     position: relative;
+    margin: 0 auto;
     margin-top: 65vh;
-    z-index: 1;
+  
     background-color: #ffffff;
     border-radius: 20px;
     padding: 4rem;
     box-shadow: 5px 5px 20px #bebebe;
     width: 100%;
     font-size: 1.2em;
+    box-sizing: border-box;
 }
 
 .form-container h1 { 
     text-align: center;
+    margin: 0 0 1em 0;
+
 }
 
 .form-grid {
@@ -56,7 +88,7 @@ body {
 .form-grid input,
 .form-grid textarea  {
     border: 1px solid #e6e3e3;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 5px;
     height: 2.5em;
     width: 100%;
@@ -76,11 +108,12 @@ body {
     overflow: hidden;
 }
 
-.form-grid input[type="button"] {
+.form-grid input[type="submit"] {
     grid-column: span 2;
     color: #ffffff;
     background-color: #e91126;
-    width: 20%;
+    width: 25%;
+    font-size: 1.2em;
     justify-self: center;
 }
 
@@ -94,22 +127,19 @@ body {
 
 /* showreel area */
 .showreel-container {
+    display: block;
     width: 100%;
-    height: 425px;
-    /* height: 100%; */
-}
-
-.trigger-area {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
+    height: 410px; 
+    /* height: auto;
+    max-height: 410px; */
+    
 }
 
 .showreel-overlay {
-    position: relative;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    /* height: auto; */
+    z-index: -1;    
 }
 
 #overlay-trigger {
@@ -123,19 +153,25 @@ body {
     display: none;
 }
 
-#overlay-trigger:checked ~ #showreel-video {
+#overlay-trigger:checked ~ #showreel-video  {
     display: block;
 }
 
+/* #overlay-trigger:checked ~ .youtube-responsive-box #showreel-video  {
+    display: block;
+} */
+
 #showreel-video {
-    /* position: relative;     */
-    top: -100%;
     display: none;
     z-index: -2;
+    width: 100%;
     height: 100%;
-        
-    
+
+    /* 496px (width)/1280px(height) = 0.3875 - added to remove youtube black bars */
+    /* padding-top: 38.75%; */
 }
+
+
 
 /* services grid */
 .services-container {
@@ -145,40 +181,22 @@ body {
     width: 100%;
     gap: 2rem;
     font-size: 18px;
-    /* margin-bottom: 10em; */
     background-color: #ffffff;
     padding: 2rem 0;
-}
+    min-height: 0px;
 
-.services-bottom-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* width: 100%s;  */
-    /* margin-right: -20%; */
-}
-
-.mobile-size-adjust {
-    /* float: right; */
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-} 
-
-
-/* #services-mobile-pic {
-    background-image: url("./responsive-web-img/mobile.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    z-index: 5;
-    margin-right: -15rem;
 }
 
 .mobile-container {
-    position: absolute;
-    margin-right: -15rem;
-    z-index: -1;    
-} */
+    margin-top: -10%;
+    
+}
+
+.mobile-size-adjust {
+    width: 100%;
+    box-sizing: border-box;
+} 
+
 
 
 /* client portfolio */
