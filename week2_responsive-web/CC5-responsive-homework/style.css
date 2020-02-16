@@ -44,6 +44,79 @@ body {
     margin-top: 5em;
 }
 
+/* fixed contact modal */
+.modal-backdrop {
+    background: none;
+}
+
+.pimclick-orange-button {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 2.1rem;
+    width: 7em;
+    text-align: left;
+    background-color: #fc5424;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #ffffff;
+    
+}
+
+.fixed-modal {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 2rem;
+    margin-bottom: 0px;
+    width: 25%;
+    border-color: white;
+}
+
+.modal-header-grid {
+    display: grid;
+    justify-content: space-between;
+    background-color: #fc5424;
+    grid-template-columns: repeat(2, 1fr);
+    color: #ffffff;
+}
+
+.modal-header-text {
+    grid-column: span 2;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.modal-body {
+    border: 1px solid #e6e3e3;
+    margin: 1em;
+}
+
+.modal-body input,
+.modal-body textarea {
+    border: 3px solid #e6e3e3;
+    border-radius: 5px;
+    margin: 0.5em 0;
+    height: 2.5em;
+    width: 100%;
+    padding: 7px;
+}
+
+.modal-body textarea {
+    resize: none;
+    height: 5em;
+}
+
+.fixed-contact-btn {
+    margin: 0 auto;
+    color: #ffffff;
+    background-color: #e91126;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 0.7rem;
+}
 
 /* main-container */
 
@@ -62,7 +135,6 @@ body {
     position: relative;
     margin: 0 auto;
     margin-top: 65vh;
-  
     background-color: #ffffff;
     border-radius: 20px;
     padding: 4rem;
@@ -75,7 +147,6 @@ body {
 .form-container h1 { 
     text-align: center;
     margin: 0 0 1em 0;
-
 }
 
 .form-grid {
