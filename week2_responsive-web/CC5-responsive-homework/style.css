@@ -19,7 +19,7 @@ body {
 .banner-img {
     width: 100%;
     position: absolute;
-    top: -10%;
+    top: -15%;
     bottom: 100px;
     z-index: -1;
 }
@@ -31,13 +31,14 @@ body {
     flex-direction: column;
     position: fixed;
     margin-left: 3em;
+    z-index: 1;
+    top: 1em
 }
 
 .ci-logo {
     color: #fc5424;
     font-family: 'Arimo', sans-serif;
     font-size: 3rem;
-    z-index: 1;
 }
 
 .pimclick-logo {
@@ -45,6 +46,13 @@ body {
 }
 
 /* fixed contact modal */
+
+/* override bootstrap .modal-open in body. This make user able to scroll when the modal is open*/
+.modal-open {
+    overflow-y: auto; 
+}
+
+/* prevent site shading when modal is open */
 .modal-backdrop {
     background: none;
 }
@@ -60,37 +68,45 @@ body {
     border: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    color: #ffffff;
-    
+    color: #ffffff;    
+    z-index: 1;
 }
 
+
+/* Modal */
 .fixed-modal {
     position: fixed;
     bottom: 0px;
     right: 0px;
-    margin-right: 2rem;
-    margin-bottom: 0px;
-    width: 25%;
-    border-color: white;
+    margin: 0 2rem;
+    width: 30%;
+    border: 1px solid #e6e3e3;
+    border-radius: 3px;
+    box-sizing: content-box;
 }
 
 .modal-header-grid {
     display: grid;
-    justify-content: space-between;
     background-color: #fc5424;
     grid-template-columns: repeat(2, 1fr);
-    color: #ffffff;
+    color: #ffffff;    
 }
 
 .modal-header-text {
     grid-column: span 2;
     text-align: justify;
     text-align-last: center;
+    margin: auto;
 }
 
 .modal-body {
     border: 1px solid #e6e3e3;
+    border-radius: 3px;
     margin: 1em;
+}
+
+.modal-content-no-border {
+    border: none;
 }
 
 .modal-body input,
@@ -115,7 +131,7 @@ body {
     width: 100%;
     border-radius: 5px;
     border: none;
-    padding: 0.7rem;
+    padding: 0.7em;
 }
 
 /* main-container */
@@ -124,7 +140,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 17%;
+    margin: 0 10%;
     /* margin: 0 auto;
     max-width: 70%; */
 
@@ -134,19 +150,20 @@ body {
 .form-container {
     position: relative;
     margin: 0 auto;
-    margin-top: 65vh;
+    margin-top: 40%;
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 4rem;
-    box-shadow: 5px 5px 20px #bebebe;
+    padding: 4em;
+    box-shadow: 0 0 40px #dbdbdb;
     width: 100%;
-    font-size: 1.2em;
     box-sizing: border-box;
 }
 
 .form-container h1 { 
     text-align: center;
     margin: 0 0 1em 0;
+    color: black;
+    font-size: 3.5em;
 }
 
 .form-grid {
@@ -160,7 +177,6 @@ body {
 .form-grid textarea  {
     border: 1px solid #e6e3e3;
     border-radius: 5px;
-    margin: 5px;
     height: 2.5em;
     width: 100%;
 }
@@ -183,31 +199,11 @@ body {
     grid-column: span 2;
     color: #ffffff;
     background-color: #e91126;
-    width: 25%;
+    width: 9em;
     font-size: 1.2em;
+    font-weight: 900;
+    font-stretch: extra-expanded;
     justify-self: center;
-}
-
-@media only screen and (max-width: 480px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    .form-grid input[type="submit"] {
-        grid-column: span 2;
-    }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    .form-grid input[type="submit"] {
-        grid-column: span 2;
-    }
-}
-
-@media only screen and (min-width: 769px) {
-
 }
 
 /* about text area */
@@ -222,24 +218,20 @@ body {
 .showreel-container {
     display: block;
     width: 100%;
-    height: 410px; 
-    /* height: auto;
-    max-height: 410px; */
-    
+    height: 425px; 
 }
 
 .showreel-overlay {
     width: 100%;
-    height: 100%;
-    /* height: auto; */
-    z-index: -1;    
+    height: auto;
+    z-index: -1;  
 }
 
 #overlay-trigger {
     display: none;
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 #overlay-trigger:checked + label {
@@ -250,21 +242,13 @@ body {
     display: block;
 }
 
-/* #overlay-trigger:checked ~ .youtube-responsive-box #showreel-video  {
-    display: block;
-} */
-
 #showreel-video {
     display: none;
     z-index: -2;
     width: 100%;
     height: 100%;
-
-    /* 496px (width)/1280px(height) = 0.3875 - added to remove youtube black bars */
-    /* padding-top: 38.75%; */
 }
-
-
+    /* 496px (width)/1280px(height) = 0.3875 - try adding padding to remove youtube black bars */
 
 /* services grid */
 .services-container {
@@ -273,16 +257,14 @@ body {
     justify-content: center;
     width: 100%;
     gap: 2rem;
-    font-size: 18px;
+    font-size: 1.2em;
     background-color: #ffffff;
     padding: 2rem 0;
     min-height: 0px;
-
 }
 
 .mobile-container {
     margin-top: -10%;
-    
 }
 
 .mobile-size-adjust {
@@ -291,10 +273,162 @@ body {
 } 
 
 
-
 /* client portfolio */
 .client-container {
+    display: block;
     text-align: center;
-    margin: auto 25%;
-    /* padding: 4rem; */
+    margin: 0 25% 0 25%;
+    width: 100%;
+    height: auto;
+    font-size: 1.5em;
+}
+
+.client-container div img {
+    width: 100%;
+    height: auto;
+    margin: 3em 0;
+}
+
+
+@media only screen and (max-width: 480px) {
+    /* global */
+    .main-container  {
+        font-size: 0.8em;
+        margin: 10%;
+    }
+
+    .header {
+        font-size: 1.7em;
+    }
+    
+    /* fixed elements */
+    .banner-img {
+        top: 0;
+    }
+
+    .fixed-logo-container {
+        margin-left: 0.5em;
+    }
+    
+    .pimclick-logo {
+        display: none;
+    }
+
+    .fixed-modal{
+        margin: 0 1rem;
+        width: 95%;
+    }
+
+    .pimclick-orange-button {
+        margin-right: 1.1rem;
+    }
+
+    /* form */
+    .form-container {
+        padding: 2em;
+        margin-top: 25%;
+    }
+
+    .form-container h1 {
+        font-size: 1.5em;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .form-grid input[type="submit"] {
+        grid-column: span 1;
+    }
+    .subject-container {
+        grid-column: span 1;
+    }
+    .message-container {
+        grid-column: span 1;
+    }
+
+    /* showreel */
+    .showreel-container {
+        height: 115px;
+    }
+
+    .showreel-overlay {
+        min-height: 115px;
+    }
+
+    /* services */
+    .services-container {
+        grid-template-columns: 1fr;
+        font-size: 1.5em;
+    }
+    .mobile-container {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* global */
+    .main-container  {
+        font-size: 0.8em;
+        margin: 10%;
+    }
+
+    /* fixed elements */
+    .banner-img {
+        top: 0;
+    }
+
+    .fixed-logo-container {
+        margin-left: 2em;
+    }
+    
+    .pimclick-logo {
+        display: none;
+    }
+
+    .fixed-modal{
+        margin: 0 1rem;
+        width: 50%;
+    }
+
+    .pimclick-orange-button {
+        margin-right: 1.1rem;
+    }
+
+    /* form */
+    .form-container {
+        margin-top: 25%;
+        padding: 3em;
+    }
+    
+    .form-container h1 {
+        font-size: 2.5em;
+    }
+
+    /* showreel */
+    .showreel-container {
+        height: 230px;
+    }
+
+    .showreel-overlay {
+        min-height: 230px;
+    }
+
+    /* servic
+
+    /* services */
+    .services-container {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+    .showreel-container {
+        height: 365px;
+    }
+
+    .showreel-overlay {
+        min-height: 365px;
+    }
 }
