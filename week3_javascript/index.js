@@ -67,10 +67,10 @@ console.log("bee" > "Bee"); // true
 console.log("Bee" < "be"); // true
 
 //if-else - Exercise 1
-// if ("0") {
-//     alert("Hello Codecmap #5")
-// } 
-// "0" == true
+if ("0") {
+    alert("Hello Codecmap #5")
+} 
+"0" == true
 
 //if-else - Exercise 2
 let theName = prompt("What's my name?");
@@ -79,3 +79,24 @@ if (theName === "Wichai") {
 } else {
     alert ("คุณไม่รู้จักชื่อฉัน");
 }
+
+//if-else - Exercise 3 
+let score = prompt("Please enter your score.");
+if (score >= 80) {
+    alert ("you got an A grade.");
+} else if (score < 80 & score >= 70) {
+    alert("you got a B grade ");
+} else if (score < 70 & score >= 60) {
+    alert("you got a C grade");
+} else if (score < 60 & score >= 50) {
+    alert("you got a D grade");
+} else if (score < 50) {
+    alert("you failed");
+} else {
+    alert("wrong input. please enter only number.");
+}
+
+//if-else - Exercise 4: tenary operators
+ let age = prompt("How old are you?");
+ let price = (age < 18) ? 2000 : 3500;
+ alert(price);
