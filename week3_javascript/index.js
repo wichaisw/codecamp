@@ -1,10 +1,12 @@
 //Lab1
+console.log("Lab1")
 let human;
 const name = "Wichai";
 human = name;
 console.log(human);
 
 //Lab2
+console.log("Lab2")
 let myWalletValue = 200;
 let myParentsName = "father & mother";
 let myAddress = "134 Suanson Village";
@@ -12,13 +14,43 @@ let ourUniverseAge = 13800000000;
 
 
 // Exercise1
+console.log("Exercise1")
 console.log(`hello ${1}`);
 console.log(`hello ${"name"}`);
 console.log(`hello ${name}`);
 
 // Exercise2
+console.log("Exercise2")
 let myName = "Wichai"
 let myAge = "25"
 let Address = "134 Suanson Village";
 let myProfile = `My name is ${myName}. I'm ${myAge} years old.\nI live at ${Address}`
 console.log(myProfile)
+
+
+// Basic Operator - Exercise 1
+console.log("Basic Operator - Exercise 1")
+let a = 1, b = 1;
+console.log(a, b) // 1,1
+let c = ++a; 
+console.log(c) //1
+let d = b++;
+console.log(d) //2
+
+// Basic Operator - Exercise 2
+console.log("Basic Operator - Exercise 2")
+console.log("" + 1 + 0);
+console.log("" - 1 + 0);
+console.log(true + false);
+console.log(6 / "3");
+console.log("2" * "3");
+console.log(4 + 5 + "px");
+console.log("$" + 4 + 5);
+console.log("4" - 2);
+console.log("4px" - 2);
+console.log(7 / 0);
+console.log("-9" + 5);
+console.log("-9" - 5);
+console.log(null + 1);
+console.log(undefined + 1);
+console.log("\t \n" - 2);
