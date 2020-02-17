@@ -65,3 +65,17 @@ console.log(undefined === null); // false
 console.log("bee" < "be"); // false
 console.log("bee" > "Bee"); // true
 console.log("Bee" < "be"); // true
+
+//if-else - Exercise 1
+// if ("0") {
+//     alert("Hello Codecmap #5")
+// } 
+// "0" == true
+
+//if-else - Exercise 2
+let theName = prompt("What's my name?");
+if (theName === "Wichai") {
+    alert ("เก่งมาก");
+} else {
+    alert ("คุณไม่รู้จักชื่อฉัน");
+}
