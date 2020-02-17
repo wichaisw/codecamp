@@ -28,8 +28,8 @@ let myProfile = `My name is ${myName}. I'm ${myAge} years old.\nI live at ${Addr
 console.log(myProfile)
 
 
-// Basic Operator - Exercise 1
-console.log("Basic Operator - Exercise 1")
+// Basic Operators - Exercise 1
+console.log("Basic Operators - Exercise 1")
 let a = 1, b = 1;
 console.log(a, b) // 1,1
 let c = ++a; 
@@ -37,8 +37,8 @@ console.log(c) //1
 let d = b++;
 console.log(d) //2
 
-// Basic Operator - Exercise 2
-console.log("Basic Operator - Exercise 2")
+// Basic Operators - Exercise 2
+console.log("Basic Operators - Exercise 2")
 console.log("" + 1 + 0);
 console.log("" - 1 + 0);
 console.log(true + false);
@@ -54,3 +54,14 @@ console.log("-9" - 5);
 console.log(null + 1);
 console.log(undefined + 1);
 console.log("\t \n" - 2);
+
+//Basic Operators - Exercise 3
+console.log("Basic Operators - Exercise 3");
+console.log(5 > 4); // true
+console.log("apple" > "pineapple"); // false
+console.log("2" > "12"); // true
+console.log(undefined == null); // true
+console.log(undefined === null); // false
+console.log("bee" < "be"); // false
+console.log("bee" > "Bee"); // true
+console.log("Bee" < "be"); // true
