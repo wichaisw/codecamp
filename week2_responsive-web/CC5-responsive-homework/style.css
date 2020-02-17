@@ -140,7 +140,6 @@ body {
     margin: 0 10%;
     /* margin: 0 auto;
     max-width: 70%; */
-
 }
 
 /* form */
@@ -188,7 +187,7 @@ body {
 }
 
 #message {
-    height: 15em;
+    height: 12em;
     resize: none;
     overflow: hidden;
 }
@@ -325,6 +324,7 @@ body {
     .form-container {
         padding: 2em;
         margin-top: 25%;
+        font-size: 1.1em;
     }
 
     .form-container h1 {
@@ -332,19 +332,18 @@ body {
     }
 
     .form-grid {
-        grid-template-columns: 1fr;
+        display: block;
         width: 100%;
     }
 
-    .subject-container {
-        grid-column: span 1;
-    }
-    .message-container {
-        grid-column: span 1;
+    .form-grid input,
+    .form-grid textarea {
+        margin-bottom: 1em;
     }
 
     .form-grid input[type="submit"] {
-        grid-column: span 1;
+        display: block;
+        margin: 0 auto;
     }
 
     /* showreel */
@@ -399,6 +398,7 @@ body {
     .form-container {
         margin-top: 25%;
         padding: 3em;
+        font-size: 1.1em;
     }
     
     .form-container h1 {
