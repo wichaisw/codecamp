@@ -15,7 +15,6 @@ body {
     color: #e91126;
 }
 
-
 .banner-img {
     width: 100%;
     position: absolute;
@@ -23,7 +22,6 @@ body {
     bottom: 100px;
     z-index: -1;
 }
-
 
 /* fixed items */
 .fixed-logo-container {
@@ -71,7 +69,6 @@ body {
     color: #ffffff;    
     z-index: 1;
 }
-
 
 /* Modal */
 .fixed-modal {
@@ -157,6 +154,7 @@ body {
     box-shadow: 0 0 40px #dbdbdb;
     width: 100%;
     box-sizing: border-box;
+    font-size: 1.2em;
 }
 
 .form-container h1 { 
@@ -177,7 +175,7 @@ body {
 .form-grid textarea  {
     border: 1px solid #e6e3e3;
     border-radius: 5px;
-    height: 2.5em;
+    height: 3em;
     width: 100%;
 }
 
@@ -190,7 +188,7 @@ body {
 }
 
 #message {
-    height: 12em;
+    height: 15em;
     resize: none;
     overflow: hidden;
 }
@@ -338,13 +336,14 @@ body {
         width: 100%;
     }
 
-    .form-grid input[type="submit"] {
-        grid-column: span 1;
-    }
     .subject-container {
         grid-column: span 1;
     }
     .message-container {
+        grid-column: span 1;
+    }
+
+    .form-grid input[type="submit"] {
         grid-column: span 1;
     }
 
