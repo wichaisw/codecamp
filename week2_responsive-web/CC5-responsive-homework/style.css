@@ -19,7 +19,7 @@ body {
 .banner-img {
     width: 100%;
     position: absolute;
-    top: -10vh;
+    top: -10%;
     bottom: 100px;
     z-index: -1;
 }
@@ -186,6 +186,28 @@ body {
     width: 25%;
     font-size: 1.2em;
     justify-self: center;
+}
+
+@media only screen and (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-grid input[type="submit"] {
+        grid-column: span 2;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-grid input[type="submit"] {
+        grid-column: span 2;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+
 }
 
 /* about text area */
