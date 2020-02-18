@@ -182,23 +182,28 @@ if (null || -1 && 1) alert( 'third' );  // run
 // }  
 
 // Loop Exercise 3: Number Guessing Game (while loop)
-/*
-let rightNumber = prompt("Choose a number between 1 and 100");
-let guessNumber;
-while (guessNumber != rightNumber ) {
-    guessNumber = prompt("Guess the number.");
-    if (guessNumber === null || guessNumber === "") {
-        alert("exit")
-        break;
-    } else if (guessNumber > rightNumber) {
-        alert("Your guessing number is too high");
-    } else if (guessNumber < rightNumber) {
-        alert("Your guessing number is too low");
-    } else if (guessNumber == rightNumber) {
-        alert("Congrats! You guess it right!");
-    }
-}
-*/
+
+// let rightNumber = prompt("Choose a number between 1 and 100");
+// while (rightNumber < 1 || rightNumber > 100) {
+//     alert("Please enter number between 1 and 100");
+//     rightNumber = prompt("Choose a number between 1 and 100");
+// }
+
+// let guessNumber;
+// while (guessNumber != rightNumber ) {
+//     guessNumber = prompt("Guess the number.");
+//     if (guessNumber === null || guessNumber === "") {
+//         alert("exit");
+//         break;
+//     } else if (guessNumber > rightNumber) {
+//         alert("Your guessing number is too high");
+//     } else if (guessNumber < rightNumber) {
+//         alert("Your guessing number is too low");
+//     } else if (guessNumber == rightNumber) {
+//         alert("Congrats! You guess it right!");
+//     }
+// }
+
 
 // Switch Case Exercise 1: convert switch cases to if-else conditions
 /*
@@ -228,3 +233,15 @@ switch(a) {
         break;
 }
 */
+
+// Function Exercise 1
+function draw(n) {
+    let star;
+    for (i=0; i<n; i++) {
+        star = star + "*"
+        
+    }
+    return star
+}
+
+draw(3)
