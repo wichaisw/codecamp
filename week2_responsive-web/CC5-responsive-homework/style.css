@@ -7,7 +7,7 @@ body {
 }
 
 .header {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -255,18 +255,21 @@ body {
     width: 100%;
     gap: 2rem;
     font-size: 1.2em;
-    background-color: #ffffff;
     padding: 2rem 0;
     min-height: 0px;
 }
 
 .mobile-container {
-    margin-top: -10%;
+    position: absolute;
+    right: 0;
+    margin-top: 35em;
+    z-index: -1;
 }
 
 .mobile-size-adjust {
-    width: 100%;
+    width: 50vw;
     box-sizing: border-box;
+    z-index: -1;
 } 
 
 
@@ -312,8 +315,9 @@ body {
     }
 
     .fixed-modal{
-        margin: 0 1rem;
-        width: 95%;
+        margin: 0;
+        width: 100%;
+        height: auto;
     }
 
     .pimclick-orange-button {
@@ -420,14 +424,26 @@ body {
     .services-container {
         font-size: 0.8em;
     }
+
+    .mobile-container {
+        margin-top: 40em;
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
+    .banner-img {
+        top: 0;
+    }
+    
     .showreel-container {
         height: 365px;
     }
 
     .showreel-overlay {
         min-height: 365px;
+    }
+
+    .mobile-container {
+        margin-top: 40em;
     }
 }
