@@ -146,19 +146,85 @@ if (-1 && 0) alert( 'second' );         // not run
 if (null || -1 && 1) alert( 'third' );  // run
 */
 
-// Boolean Operators Exercise: log in system
-let username = prompt("Who are you?");
-if (username === "Admin") {
-    let password = prompt("Please enter password") 
-        if (password === "codecamp#5") {
-            alert("ยินดีต้อนรับ");
-        } else if (password === null || password === "") {
-            alert("ยกเลิก");
-        } else {
-            alert("Wrong password");
-        }  
-} else if (username === null || username === "") {
-    alert("ยกเลิก");
-} else {
-    alert("ผมไม่รู้จักคุณ");
+// Boolean Operators Exercise 5: log in system
+// let username = prompt("Who are you?");
+// if (username === "Admin") {
+//     let password = prompt("Please enter password") 
+//         if (password === "codecamp#5") {
+//             alert("ยินดีต้อนรับ");
+//         } else if (password === null || password === "") {
+//             alert("ยกเลิก");
+//         } else {
+//             alert("Wrong password");
+//         }  
+// } else if (username === null || username === "") {
+//     alert("ยกเลิก");
+// } else {
+//     alert("ผมไม่รู้จักคุณ");
+// }
+
+// Loop Exercise 1: for loop
+// let sum = 0;
+// for (let i = 1; i <= 1027; i = i + 2) {
+//     sum += i;    
+// }
+// console.log(sum);
+
+// Loop Exercise 2: convert for loop to while loop
+// for (let i = 0; i < 3; i++) {
+//     alert( `number ${i}!` );
+// }
+  
+// let i = 0;
+// while (i<3) {
+//     alert(`number ${i}!`)
+//     i++;
+// }  
+
+// Loop Exercise 3: Number Guessing Game (while loop)
+/*
+let rightNumber = prompt("Choose a number between 1 and 100");
+let guessNumber;
+while (guessNumber != rightNumber ) {
+    guessNumber = prompt("Guess the number.");
+    if (guessNumber === null || guessNumber === "") {
+        alert("exit")
+        break;
+    } else if (guessNumber > rightNumber) {
+        alert("Your guessing number is too high");
+    } else if (guessNumber < rightNumber) {
+        alert("Your guessing number is too low");
+    } else if (guessNumber == rightNumber) {
+        alert("Congrats! You guess it right!");
+    }
 }
+*/
+
+// Switch Case Exercise 1: convert switch cases to if-else conditions
+/*
+let browser = prompt("enter the browser you're using")
+if (browser === "Edge") {
+    alert( "You've got the Edge!" );
+} else if (browser === "Chrome" || browser === "Firefox" || browser === "Safari" || browser === "Opera") {
+    alert( 'Okay we support these browsers too' );
+} else {
+    alert( 'We hope that this page looks ok!' );
+}
+*/
+  
+
+// Switch Case Exercise 2: convert if-else conditions to switch cases
+/*
+let a = +prompt('a?', '');          // let a = Number(prompt('a?', ''));  
+switch(a) {
+    case(0): 
+        alert(0);
+        break;
+    case(1):
+        alert(1);
+        break;
+    case(2 || 3):
+        alert("2,3");
+        break;
+}
+*/
