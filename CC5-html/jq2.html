@@ -37,21 +37,31 @@
             });
         });
 
+        // iQuery animation effect
+        $(document).ready(function (){
+            $("button").click(function(){
+                $("#jQ-animation").animate({width: "400px",
+                    height: "100px",
+                    opacity: "0.7"
+                });
+                $("#jQ-animation").animate({fontSize: "4em"});
+                // altervative way
+                // $("#jQ-animation").animate({"font-size": "4em"});
+            });
+        });
 
     </script>
 </head>
 
 <body>
-    <style>
-        input[type='value'] {
-            color: red;
-        }
-    </style>
     Enter : <input id="in1" type="text">
     <div id="d1">D1: keydown</div>
     <!-- case insensitive | เน้นปุ่ม same key, different language is the same | don't fire special keys e.g. ctrl + shift -->
     <div id="d2">D2: keypress</div> <!-- case sensitive | เน้นตัวอักษร -->
     <div id="d3"></div>
+    <hr>
+    <button>start animation</button>
+    <div id="jQ-animation" style="color: white; background-color: teal; width: 200px; height: 50px;">CodeCamp#5</div>
 </body>
 
 </html>
