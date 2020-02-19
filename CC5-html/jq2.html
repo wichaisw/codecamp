@@ -18,15 +18,22 @@
                 $("#d2").html("Keypress: " + event.which);
             });
         });
-        
         // bind enter to clear text box value
         $(document).ready(function () {
             $("#in1").keydown(function (event) {
                 if (event.which == "13") {
                     let inputValue = $("#in1").val();
-                    $("#in1").val("");
                     $("#d3").text(inputValue);
+                    $("#in1").val("");
                 };
+
+                // alternative
+                /*
+                if (event.which == "13") {
+                    $("#d3").html($(this).val());
+                    $("#in1").val("");
+                };
+                */
             });
         });
 
