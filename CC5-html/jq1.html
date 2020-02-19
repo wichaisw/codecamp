@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jQuery practice</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
     <script>
     $(document).ready(function(){
         $("#hide").click(function(){
-            $("p").hide();
+            $("p").hide(1000);
         });    
         $("#show").click(function(){
-            $("p").show();
+            $("p").show(2000);
+        });
+        $("#hide-this").click(function(){
+            $(this).hide(1000);
+        });  
+        $(".jQselector-test").click(function(){
+            $("p:first-child").hide(2000);
         });
     });
     </script>
 </head>
 <body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+        Eligendi modi sequi ullam possimus beatae perferendis asperiores consequatur, <br>
+        nemo ipsam vel dolorem aliquam laboriosam a accusantium earum id iste! Dicta, quibusdam!</p>
+    <p>If you click on the "Hide" button, I will disappear.</p>
+    <p>If you click on the "Hide" button, I will disappear.</p>
+    <p>If you click on the "Hide" button, I will disappear.</p>
     <p>If you click on the "Hide" button, I will disappear.</p>
     <button id="hide">Hide</button>
     <button id="show">Show</button>
+    <button id="hide-this">Hide This</button>
+    <button class="jQselector-test">Selector Test</button>
 </body>
 </html>

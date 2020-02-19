@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+            $("#in1").keydown(function (event) {
+                $("#d1").html("Keydown: " + event.which);
+            });
+        });
+
+        // typeof(event.which) ปุ่มต่างๆ ที่กดรับค่าเป็น number
+        $(document).ready(function () {
+            $("#in1").keypress(function (event) {
+                $("#d2").html("Keypress: " + event.which);
+            });
+        });
+        
+        // bind enter to clear text box value
+        $(document).ready(function () {
+            $("#in1").keydown(function (event) {
+                if (event.which == "13") {
+                    let inputValue = $("#in1").val();
+                    $("#in1").val("");
+                    $("#d3").text(inputValue);
+                };
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <style>
+        input[type='value'] {
+            color: red;
+        }
+    </style>
+    Enter : <input id="in1" type="text">
+    <div id="d1">D1: keydown</div>
+    <!-- case insensitive | เน้นปุ่ม same key, different language is the same | don't fire special keys e.g. ctrl + shift -->
+    <div id="d2">D2: keypress</div> <!-- case sensitive | เน้นตัวอักษร -->
+    <div id="d3"></div>
+</body>
+
+</html>
