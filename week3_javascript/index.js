@@ -143,6 +143,7 @@ if (username === "Admin") {
         } else {
             alert("Wrong password");
         }  
+// !user มีค่าเท่า username === null เพราะถ้ามีค่า username เป็นทรู ไม่มีก็เป็น false
 } else if (username === null || username === "") {
     alert("ยกเลิก");
 } else {
@@ -221,15 +222,17 @@ while (i<3) {
 
 // Loop Exercise 3: ข้อ 2.5.6 เกมทายตัวเลข
 
-let rightNumber = prompt("Choose a number between 1 and 100");
-while (rightNumber < 1 || rightNumber > 100) {
+let rightNumber = Number(prompt("Choose a number between 1 and 100"));
+while (rightNumber < 1 || rightNumber > 100 || isNaN(rightNumber) ) {
     alert("Please enter number between 1 and 100");
-    rightNumber = prompt("Choose a number between 1 and 100");
+    rightNumber = Number(prompt("Choose a number between 1 and 100"));
 }
+// หรือตั้งเงื่อนไขว่าถ้า เลขไม่อยู่ใน 100 ก็ไม่เข้า while แต่แรก
+
 
 let guessNumber;
 while (guessNumber != rightNumber ) {
-    guessNumber = prompt("Guess the number.");
+    guessNumber = Number(prompt("Guess the number."));
     if (guessNumber === null || guessNumber === "") {
         alert("exit");
         break;
@@ -241,6 +244,9 @@ while (guessNumber != rightNumber ) {
         alert("Congrats! You guess it right!");
     }
 }
+// ใช้ tenary แทนได้โดย
+//     let message = (guessNumber > rightNumber) ? "Your guessing number is too high":"Your guessing number is too low";
+//     alert(message)
 
 // Section3: Switch Cases
 // Switch Case Exercise 1: convert switch cases to if-else conditions
