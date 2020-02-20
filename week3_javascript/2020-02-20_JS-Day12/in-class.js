@@ -85,6 +85,7 @@ bmiCompare(bmi1, bmi2);
 */
 
 // JavaScript Exercise 2: BMI#2
+/*
 let user1 = prompt("Enter 1st person name.");
 let cmHeight1 = Number(prompt("Enter 1st person height (cm.)"));
 let weight1 = Number(prompt("Enter 1st person weight (kg.)"));
@@ -92,13 +93,16 @@ let weight1 = Number(prompt("Enter 1st person weight (kg.)"));
 let user2 = prompt("Enter 2nd person name.");
 let cmHeight2 = Number(prompt("Enter 2nd person height (cm.)"));
 let weight2 = Number(prompt("Enter 2nd person weight (kg.)"));
+*/
 
 // คำนวณค่า BMI จาก ส่วนสูง(เซนติเมตร) และน้ำหนัก (กิโลกรัม)
+/*
 let bmiCalculator = (cmHeight, weight) => {
     let mHeight = cmHeight / 100;
     let bmi = weight / mHeight**2;
     return bmi;
 }
+*/
 
 /*
 function bmiCalculator (cmHeight, weight) {
@@ -108,6 +112,7 @@ function bmiCalculator (cmHeight, weight) {
 }
 */
 
+/*
 let bmi1 = bmiCalculator(cmHeight1, weight1)
 let bmi2 = bmiCalculator(cmHeight2, weight2)
 
@@ -118,21 +123,26 @@ if (bmi1 > bmi2) {
 } else {
     alert(`${user1} and ${user2} has equal BMI`);
 }
+*/
 
 // JavaScript Exercise 3: Highest Number
 let highestNum = -Infinity;
 while (true) {
     let num = prompt("Please enter number.");
-    console.log(num)
-    if (num > highestNum) {
-        let staticNum = num;
-        highestNum = Number(staticNum);
-        console.log(highestNum)
-    };
-
-    if (num == null) {
-        alert(highestNum);
+   
+    if ( isNaN(num) ) {
+        alert("Please enter only number")
+        continue;
+    } else if (num > highestNum && num !== null) {
+        highestNum = Number(num);
+    } else if (highestNum === -Infinity) {
+        continue;
+    }
+    
+    if (num === null) {
+        alert(`The ้highest number is ${highestNum}`);
         break;
     }; 
-}
+};
+
 
