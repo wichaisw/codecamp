@@ -140,7 +140,7 @@ while (true) {
     }
     
     if (num === null) {
-        alert(`The ้highest number is ${highestNum}`);
+        alert(`The highest number is ${highestNum}`);
         break;
     }; 
 };
