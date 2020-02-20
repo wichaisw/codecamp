@@ -129,7 +129,7 @@ let jsExercise3_highestNumber = () => {
         } else if (num === null && highestNum !== -Infinity) {
             alert(`The highest number is ${highestNum}`);
             break;
-        } else if (Number(num) > Number(highestNum) && num !== null) {
+        } else if ( Number(num) > Number(highestNum) && num !== null) {
             highestNum = num;
         } else if (highestNum === -Infinity) {
             alert("Please enter some number.");
@@ -158,17 +158,17 @@ let jsExercise3_highestNumber = () => {
 let jsExercise4_highestNumber2 = () => {
 
     let highestNum1 = -Infinity;
-    let highestNum2 = -Infinity;;
+    let highestNum2 = -Infinity;
     while (true) {
         let num = prompt("Please enter number.");
-        
+
         if ( isNaN(num) ) {
             alert("Please enter only number.")
             continue;
         } else if (!num && num != "" && highestNum1 !== -Infinity && highestNum2 !== -Infinity) {
-            alert(`The highest number is ${highestNum1}.\nThe second highest number is ${highestNum2}.`);
+            alert(`The highest number is ${highestNum1*1}.\nThe second highest number is ${highestNum2*1}.`);
             break;
-        } else if (Number(num) > Number(highestNum1) && num !== null && num !== "") {
+        } else if ( Number(num) > Number(highestNum1) && num !== null && num !== "") {
             let tempNum = highestNum1;
             highestNum1 = num;
             highestNum2 = tempNum;
@@ -178,7 +178,7 @@ let jsExercise4_highestNumber2 = () => {
                 continue; 
             };
 
-        } else if (Number(num) <= Number(highestNum1) && Number(num) > Number(highestNum2) && num !== null && num !== "") {
+        } else if ( Number(num) <= Number(highestNum1) && Number(num) > Number(highestNum2) && num !== null && num !== "") {
             highestNum2 = num;
         } else if (highestNum1 === -Infinity || num === "") {
             alert("Please enter some number.");
