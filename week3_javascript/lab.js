@@ -1,4 +1,4 @@
-// February 17-18, 2020: Basic JavaScript in-class laps
+// February 17-18, 2020: Basic JavaScript in-class labs
 
 // February 17, 2020
 //Lab1
