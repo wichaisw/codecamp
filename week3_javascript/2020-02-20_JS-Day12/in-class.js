@@ -13,9 +13,9 @@ let arrowFunctionExercise1 = () => {
 
     ask(
         "Do you agree?",
-        () => {alert("You agreed.");},
-        () => {alert("You canceled the execution");}
-    ); 
+        () => { alert("You agreed."); },
+        () => { alert("You canceled the execution"); }
+    );
 
 };
 // arrowFunctionExercise1();
@@ -43,18 +43,18 @@ else
 let CleanCodeExercise1 = () => {
 
     function pow(x, n) {
-    let result = 1;
-    for (let i = 0; i < n; i++) result *= x;
-    return result;
+        let result = 1;
+        for (let i = 0; i < n; i++) result *= x;
+        return result;
     };
 
     let x = prompt("x?", ''), n = prompt("n?", '');
 
     if (n <= 0) {
-    alert(`Power ${n} is not supported, please enter an integer number greater than zero`);
+        alert(`Power ${n} is not supported, please enter an integer number greater than zero`);
     } else {
-    alert( pow(x, n) );
-    } ;
+        alert(pow(x, n));
+    };
 
 };
 // CleanCodeExercise1();
@@ -71,9 +71,9 @@ let jsExercise1_BMI = () => {
 
     if (bmi1 > bmi2) {
         alert(`${user1} has more BMI than ${user2}\n${user1}'s BMI is ${bmi1}`);
-    } else if(bmi2 > bmi1) {
+    } else if (bmi2 > bmi1) {
         alert(`${user2} has more BMI than ${user1}\n${user2}'s BMI is ${bmi2}`);
-    } else if (bmi1 === bmi2 ) {
+    } else if (bmi1 === bmi2) {
         alert(`${user1} and ${user2} has equal BMI`);
     } else {
         alert(`BMI must be number only`);
@@ -95,9 +95,9 @@ let jsExercise2_BMI2 = () => {
     let cmHeight2 = Number(prompt("Enter 2nd person height (cm.)"));
     let weight2 = Number(prompt("Enter 2nd person weight (kg.)"));
 
-    function bmiCalculator (cmHeight, weight) {
+    function bmiCalculator(cmHeight, weight) {
         let mHeight = cmHeight / 100;
-        let bmi = weight / mHeight**2;
+        let bmi = weight / mHeight ** 2;
         return bmi;
     }
 
@@ -106,7 +106,7 @@ let jsExercise2_BMI2 = () => {
 
     if (bmi1 > bmi2) {
         alert(`${user1} has more BMI than ${user2} \n${user1}'s BMI is ${bmi1}`);
-    } else if(bmi2 > bmi1) {
+    } else if (bmi2 > bmi1) {
         alert(`${user2} has more BMI than ${user1} \n${user2}'s BMI is ${bmi2}`);
     } else {
         alert(`${user1} and ${user2} has equal BMI`);
@@ -122,18 +122,18 @@ let jsExercise3_highestNumber = () => {
     let highestNum = -Infinity;
     while (true) {
         let num = prompt("Please enter number.");
-        
-        if ( isNaN(num) ) {
+
+        if (isNaN(num)) {
             alert("Please enter only number.")
             continue;
         } else if (num === null && highestNum !== -Infinity) {
             alert(`The highest number is ${highestNum}`);
             break;
-        } else if ( Number(num) > Number(highestNum) && num !== null) {
+        } else if (Number(num) > Number(highestNum) && num !== null) {
             highestNum = num;
         } else if (highestNum === -Infinity) {
             alert("Please enter some number.");
-            continue; 
+            continue;
         };
     };
 
@@ -162,27 +162,40 @@ let jsExercise4_highestNumber2 = () => {
     while (true) {
         let num = prompt("Please enter number.");
 
-        if ( isNaN(num) ) {
+        if (isNaN(num)) {
             alert("Please enter only number.")
             continue;
-        } else if (!num && num != "" && highestNum1 !== -Infinity && highestNum2 !== -Infinity) {
-            alert(`The highest number is ${highestNum1*1}.\nThe second highest number is ${highestNum2*1}.`);
+
+        } else if (!num && num != ""
+            && highestNum1 !== -Infinity
+            && highestNum2 !== -Infinity) {
+
+            alert(`The highest number is ${highestNum1 * 1}.\nThe second highest number is ${highestNum2 * 1}.`);
             break;
-        } else if ( Number(num) > Number(highestNum1) && num !== null && num !== "") {
+
+        } else if (Number(num) > Number(highestNum1)
+            && num !== null
+            && num !== "") {
+
             let tempNum = highestNum1;
             highestNum1 = num;
             highestNum2 = tempNum;
 
             if (highestNum2 === -Infinity || highestNum2 === "") {
                 alert("Please enter at least one more number.");
-                continue; 
+                continue;
             };
 
-        } else if ( Number(num) <= Number(highestNum1) && Number(num) > Number(highestNum2) && num !== null && num !== "") {
+        } else if (Number(num) <= Number(highestNum1)
+            && Number(num) > Number(highestNum2)
+            && num !== null
+            && num !== "") {
+
             highestNum2 = num;
+
         } else if (highestNum1 === -Infinity || num === "") {
             alert("Please enter some number.");
-            continue; 
+            continue;
         };
     };
 
