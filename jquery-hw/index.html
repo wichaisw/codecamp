@@ -7,7 +7,29 @@
     <title>jQuery Homework: Facebook post</title>
 </head>
 <body>
-    
+    <div id="main-box"> 
+        <div class="fb-post">
+            <div class="fb-post-header fb-post-padding">
+                <b>สร้างโพสต์</b>
+            </div>
+
+            <div class="fb-post-content fb-post-padding">
+                <img src="" alt="">
+                <form action="#" id="fb-post-form">
+                    <label for="post-text"></label>
+                    <textarea name="post-text" id="post-text" rows="2" placeholder="คุณกำลังคิดอะไรอยู่?"></textarea>
+                </form>
+            </div>
+
+            <div class="fb-post-attachment fb-post-padding">
+                <button id="image-video-attach">รูปภาพ/วิดีโอ</button>
+            </div>
+
+            <div class="fb-post-footer fb-post-padding">
+                <button type="submit" form="fb-post-form" value="post-submit" class="post-button"><b>โพสต์</b></button>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./script.js"></script>
 </body>
