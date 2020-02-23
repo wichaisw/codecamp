@@ -1,5 +1,6 @@
 body {
     margin: 0 auto;
+    background-color: #e9ebee;
 }
 
 #main-box {
@@ -8,12 +9,14 @@ body {
     align-items: center;
 }
 
+/* main facebook post wrapper */
 .fb-post {
     display: flex;
     flex-direction: column;
     background-color: #f5f6f7;
     width: 30%;
     height: auto;
+    border: 1px solid #e1e3e5;
 }
 
 .fb-post-padding {
@@ -21,7 +24,7 @@ body {
 }
 
 .fb-post-header {
-    border-bottom: 10px solid #e7e9eb;
+    border-bottom: 2px solid #e7e9eb;
 }
 
 /* facebook post content */
@@ -42,7 +45,6 @@ body {
 }
 
 /* attachment section */
-
 .fb-post-attachment {
     background-color: #ffffff;
 }
@@ -52,6 +54,8 @@ body {
     padding: 5px;
 }
 
+
+/* post submit section */
 .post-button {
     width: 100%;   
     background-color: #9cb4d8;
@@ -62,8 +66,44 @@ body {
     cursor: pointer;
 }
 
-/* focus */
 .post-button:active {
     background-color: #29487d;
     border: 2px solid #7faafd;
+}
+/* focus */
+
+
+/* user-generated feed wrapper*/
+.fb-feed-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #e9ebee;
+    width: 30%;
+    height: auto;
+    margin: 10px;;
+    border: 1px solid #e1e3e5;
+    box-sizing: border-box;
+}
+
+.fb-feed-template {
+    
+}
+
+.fb-feed-layout {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+.username {
+    color: #385898;
+}
+
+.feed-content {
+    border-bottom: 2px solid #e7e9eb;
+    height: auto;
+    word-wrap: break-word;
+}
+
+.feed-engagement {
+    border-bottom: 2px solid #e7e9eb;
 }

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" >
+    <link rel="stylesheet" href="./style.css">
     <title>jQuery Homework: Facebook post</title>
 </head>
+
 <body>
-    <div id="main-box"> 
+    <div id="main-box">
         <div class="fb-post">
             <div class="fb-post-header fb-post-padding">
                 <b>สร้างโพสต์</b>
@@ -15,7 +17,7 @@
 
             <div class="fb-post-content fb-post-padding">
                 <img src="" alt="">
-                <form action="#" id="fb-post-form">
+                <form id="fb-post-form">
                     <label for="post-text"></label>
                     <textarea name="post-text" id="post-text" rows="2" placeholder="คุณกำลังคิดอะไรอยู่?"></textarea>
                 </form>
@@ -26,11 +28,48 @@
             </div>
 
             <div class="fb-post-footer fb-post-padding">
-                <button type="submit" form="fb-post-form" value="post-submit" class="post-button"><b>โพสต์</b></button>
+                <button type="button" form="fb-post-form" value="post-submit" class="post-button"><b>โพสต์</b></button>
             </div>
         </div>
+
+        <div class="a"></div>
+        <div class="fb-feed-wrapper">
+            <template class="fb-feed-template">
+                <div class="fb-feed-layout">
+                    <div class="fb-post-padding">
+                        <img src="" alt="">
+                        <span class="username">username</span>
+                    </div>
+
+                    <div class="feed-content">
+                        <div class="received-post fb-post-padding">
+                            <p></p>
+                            placholder
+                        </div>
+
+                        <div class="fb-post-padding">
+                            image
+                        </div>
+                    </div>
+
+                    <div class="feed-engagement fb-post-padding">
+                        <button>ถูกใจ</button>
+                    </div>
+
+                    <div class="fb-post-padding">
+                        comment
+                    </div>
+                </div>
+            </template>
+        </div>
+
+
     </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>
