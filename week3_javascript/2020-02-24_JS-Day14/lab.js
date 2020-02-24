@@ -115,4 +115,4 @@ function multiplyNumeric(obj, times) {
   return obj;
 };
 
-multiplyNumeric(menu, 2)
+multiplyNumeric(menu, 2)  
