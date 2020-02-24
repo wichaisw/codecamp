@@ -1,1 +1,32 @@
-'<div class="fb-post-content fb-post-padding id="test"><img src="" alt=""><form id="fb-post-form"><label for="post-text"></label><textarea name="post-text" id="post-text" rows="2" placeholder="คุณกำลังคิดอะไรอยู่?"></textarea></form></div>'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Facebook Feed Prototype</title>
+</head>
+<body>
+    <div class="fb-feed-wrapper">
+            
+    
+        <div class="fb-feed-template">
+            <div class="fb-feed-layout">
+                <div class="fb-post-padding"> <img src="" alt=""> <span class="username">username</span> </div>
+                <div class="feed-content">
+                    <div class="received-post fb-post-padding">text content</div>
+                    <div class="received-attachment fb-post-padding"> 
+                        <img src="${attachmentURL}">
+                    </div>
+                </div>
+                <div class="feed-engagement fb-post-padding"> <button>ถูกใจ</button> </div>
+                <div class="fb-post-padding"> comment </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
