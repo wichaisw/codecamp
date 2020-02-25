@@ -55,8 +55,10 @@ body {
 }
 
 #image-video-attach-url {
-    box-sizing: border-box;
+    box-sizing: content-box; 
 }
+
+
 
 /* post submit section */
 .post-button {
