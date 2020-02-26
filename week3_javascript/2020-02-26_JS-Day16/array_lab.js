@@ -51,7 +51,6 @@ checkSpam('free xxxxx');
 checkSpam("innocent rabbit");
 
 // String Method exercise #3
-
 let truncate = (str, maxlength) => {
   let truncStr;
   if (str.length > maxlength) {
@@ -63,5 +62,79 @@ let truncate = (str, maxlength) => {
 };
 
 truncate("What I'd like to tell on this topic is:", 20); // "What I'd like to te…"
-
 truncate("Hi everyone!", 20); // "Hi everyone!"
+
+// String Method exercise #4
+let  extractCurrencyValue = (string, rate) => parseFloat( string.slice(1) ) * parseFloat(rate);
+
+
+// Array Exercise #3.11.1
+let fruits = ["Apples", "Pear", "Orange"];
+
+let shoppingCart = fruits;
+shoppingCart.push("Banana");
+
+alert( fruits.length ); // 4 เพราะ pass by reference
+
+
+// Array Exercise #3.11.2
+let styles = ["Jazz", "Blues"]; 
+styles.push("Rock-n-Roll");     // ["Jazz", "Blues", "Rock-n-Roll"]
+styles[1] = "Classics";         // ["Jazz", "Classics", "Rock-n-Roll"]
+styles.shift();                 // ["Classics", "Rock-n-Roll"]
+styles.unshift("Rap", "Reggae") // ["Rap", "Reggae", "Classics", "Rock-n-Roll"]
+
+// Array Exercise #3.11.3
+// solution#1
+function sumInput() {
+  let arr = [];
+  let input;
+  while (true) {
+    input = +prompt("")
+    if (isNaN(input)) {
+      break
+    };
+    arr.push(input)
+    console.log(arr);
+  };
+  
+  let sum = 0;
+  for (let num of arr) {
+    sum = sum + num;
+  };
+  alert(sum);
+};
+
+// solution#2
+function sumInput() {
+  let arr = [];
+  let input = +prompt("enter number");
+  console.log(typeof input)
+  while (isFinite(input)) {
+    arr.push(input);
+    input = +prompt("enter number")
+    
+    console.log(arr);
+  };
+  
+  let sum = 0;
+  for (let num of arr) {
+    sum = sum + num;
+  };
+  alert(sum);
+};
+
+
+// Array Exercise #3.11.4 (optional)
+
+function getMaxSubSum(arr) {
+  a = []
+      
+};
+
+// getMaxSubSum([-1, 2, 3, -9]) == 5 (the sum of highlighted items)
+// getMaxSubSum([2, -1, 2, 3, -9]) == 6
+// getMaxSubSum([-1, 2, 3, -9, 11]) == 11
+// getMaxSubSum([-2, -1, 1, 2]) == 3
+// getMaxSubSum([100, -9, 2, -3, 5]) == 100
+// getMaxSubSum([1, 2, 3]) == 6 (take all)
