@@ -22,9 +22,12 @@ $(document).ready(function() {
 
   // add feed if #post-text is not empty
   $(".post-button").click(function() {
+    let timeStamp = new Date();
+    
+
     let attachmentUrl = $("#image-video-attach-url").val();
     let postText = $("#post-text").val();
-    let htmlFeed = `<div class="fb-feed-template"> <div class="fb-feed-layout"> <div class="feed-header-grid fb-post-padding"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <span class="username">username</span> </div> <div class="feed-content"> <div class="received-post">${postText}</div> <div class="received-attachment"> <img src="${attachmentUrl}" class="feed-img-attachment"> </div> </div> <div class="feed-engagement fb-post-padding"> <button class="like-button">Like</button> </div> <div class="fb-post-padding"> comment </div> </div> </div>`
+    let htmlFeed = `<div class="fb-feed-template"> <div class="fb-feed-layout"> <div class="feed-header-grid fb-post-padding"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="username"> username <br> ${timeStamp.toLocaleString()} </div> </div> <div class="feed-content"> <div class="received-post">${postText}</div> <div class="received-attachment"> <img src="${attachmentUrl}" class="feed-img-attachment"> </div> </div> <div class="feed-engagement fb-post-padding"> <button class="like-button">Like</button> </div> <div class="fb-post-padding"> comment </div> </div> </div>`
 
     if (postText !== "" || attachmentUrl !== "") {
       $(".fb-feed-wrapper").css({display: "flex"});
