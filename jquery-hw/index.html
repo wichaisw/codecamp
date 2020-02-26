@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <title>jQuery Homework: Facebook post</title>
 </head>
 
@@ -12,28 +13,29 @@
     <div id="main-box">
         <div class="fb-post">
             <div class="fb-post-header fb-post-padding">
-                <b>สร้างโพสต์</b>
+                <b>Create Post</b>
             </div>
 
             <div class="fb-post-content fb-post-padding">
-                <img src="" alt="">
+                <img class="user-pic-thumbnail" src="./img/anonymous.jpg" alt="user-pic-thumbnail">
                 <form id="fb-post-form">
                     <label for="post-text"></label>
-                    <textarea name="post-text" id="post-text" rows="2" placeholder="คุณกำลังคิดอะไรอยู่?"></textarea>
+                    <textarea name="post-text" id="post-text" rows="2" placeholder="What's on your mind?"></textarea>
                 </form>
             </div>
 
             <div class="fb-post-attachment fb-post-padding">
-                <form>
-                    <button type="button" id="image-video-attach-btn">รูปภาพ/วิดีโอ</button>
-                    <label for="image-video-attach-url"></label>
-                    <input type="text" id="image-video-attach-url">
+                <form class="fb-post-attachment-form">
+                    <button type="button" id="image-video-attach-btn">Photo</button>
+                    <label for="image-video-attach-url">
+                        <input type="url" id="image-video-attach-url" placeholder="enter an image url here">
+                    </label>
                 </form>
                 <img class="img-attachment">
             </div>
 
-            <div class="fb-post-footer fb-post-padding">
-                <button type="button" form="fb-post-form" value="post-submit" class="post-button"><b>โพสต์</b></button>
+            <div class="fb-post-footer">
+                <button type="button" form="fb-post-form" value="post-submit" class="post-button"><b>POST</b></button>
             </div>
         </div>
 

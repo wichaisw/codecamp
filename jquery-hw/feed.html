@@ -7,25 +7,29 @@
     <title>Facebook Feed Prototype</title>
 </head>
 <body>
-    <div class="fb-feed-wrapper">
             
-    
         <div class="fb-feed-template">
             <div class="fb-feed-layout">
-                <div class="fb-post-padding"> <img src="" alt=""> <span class="username">username</span> </div>
+                <div class="feed-header-grid fb-post-padding">
+                    <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
+                    <span class="username">username</span>
+                </div>
+                
+                
                 <div class="feed-content">
-                    <div class="received-post fb-post-padding">text content</div>
-                    <div class="received-attachment fb-post-padding"> 
-                        <img src="${attachmentURL}">
+                    <div class="received-post">${postText}</div>
+                    <div class="received-attachment"> 
+                        <img src="${attachmentUrl}" class="feed-img-attachment">
                     </div>
                 </div>
-                <div class="feed-engagement fb-post-padding"> <button>ถูกใจ</button> </div>
+                <div class="feed-engagement fb-post-padding">
+                    <button class="like-button">Like</button>
+
+                </div>
                 <div class="fb-post-padding"> comment </div>
             </div>
         </div>
-
-
-    </div>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./script.js"></script>
 </body>
