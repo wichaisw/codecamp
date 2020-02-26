@@ -74,3 +74,40 @@ let ladder = {
 };
 
 ladder.up().up().down().showStep();
+
+// Exercise 7.4.1
+// ถ้าใช้ num1, num2 เลย ไม่ใช่ this.num1, this.num2 ผลลัพธ์ก็เหมือนกัน แต่เป็นสิ่งที่ผิดและไม่ควรทำ
+// เพราะการประกาศตัวแปรโดยไม่มี let, const หรือใช้การเก็บค่าใน object key แบบ object.num หรือ this.num
+// จะทำให้ตัวแปรนั้นมีค่าใน global ผลลัพธ์จึงเรียกใช้ได้เพราะนอกฟังก์ชันก็รู้จักตัวแปร num1 
+function Calculator() {
+  this.num1 = 0;
+  this.num2 = 0;
+  this.read = function() {
+      this.num1 = Number(prompt("first number"));
+      this.num2 = Number(prompt("second number"));
+  };
+  this.sum = function() {
+    return this.num1 + this.num2
+  };
+  this.mul = function() {
+    return this.num1 * this.num2
+  };
+};
+
+let cal1 = new Calculator();
+cal1.read();
+console.log(cal1.sum());
+console.log(cal1.mul());
+
+// Exercise 7.4.2
+function Accumulator(startingValue) {
+  this.value = startingValue;
+  this.read = function() {
+    newNum = Number(prompt("enter number"));
+    this.value = this.value + newNum;
+  };
+};
+
+let accu1 = new Accumulator(10);
+
+
