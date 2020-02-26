@@ -49,3 +49,19 @@ function checkSpam(string) {
 checkSpam('buy ViAgRA now');
 checkSpam('free xxxxx');
 checkSpam("innocent rabbit");
+
+// String Method exercise #3
+
+let truncate = (str, maxlength) => {
+  let truncStr;
+  if (str.length > maxlength) {
+    truncStr = str.slice(0, (maxlength-1) ) + "..."
+  } else {
+    truncStr = str;
+  };
+  return truncStr
+};
+
+truncate("What I'd like to tell on this topic is:", 20); // "What I'd like to te…"
+
+truncate("Hi everyone!", 20); // "Hi everyone!"
