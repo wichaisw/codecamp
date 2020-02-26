@@ -58,6 +58,10 @@ body {
     box-sizing: content-box; 
 }
 
+.img-attachment {
+    width: 100%;
+}
+
 
 
 /* post submit section */

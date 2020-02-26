@@ -3,7 +3,7 @@ $(document).ready(function() {
   
   $("#image-video-attach-btn").click(function() {
     let attachmentURL = $("#image-video-attach-url").val();
-    $("#attachment").attr("src", `${attachmentURL}`);
+    $(".img-attachment").attr("src", `${attachmentURL}`);
   });
   
   $(".post-button").click(function() {
@@ -11,7 +11,6 @@ $(document).ready(function() {
     let postText = $("#post-text").val();
     $(".fb-feed-wrapper").append(`<div class="fb-feed-template">
     <div class="fb-feed-layout"> <div class="fb-post-padding"> <img src="" alt=""> <span class="username">username</span> </div><div class="feed-content"> <div class="received-post fb-post-padding"> ${postText} </div><div class="received-attachment fb-post-padding"> <img src="${attachmentURL}"></div></div><div class="feed-engagement fb-post-padding"> <button>ถูกใจ</button> </div><div class="fb-post-padding"> comment </div></div></div>`);
-    
   });
 });
 
