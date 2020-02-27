@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     background-color: #e9ebee;
-    font-family: 'Spartan', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -24,17 +24,12 @@ body {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (max-width: 768px) {
-    .fb-post {
-        width: 90%;    
-    }
-}
-
 .fb-post-padding {
     padding: 0.5rem;
 }
 
 .fb-post-header {
+    background-image: linear-gradient(to bottom, #d3d3d3, #f5f6f7);
     border-bottom: 2px solid #e7e9eb;
     padding: 0.7rem 0.5rem 0.7rem 0.5rem;
 }
@@ -140,12 +135,6 @@ body {
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 768px) {
-    .fb-feed-wrapper {
-        width: 90%;    
-    }
-}
-
 
 .fb-feed-layout {
     margin-bottom: 10px;
@@ -159,7 +148,7 @@ body {
     grid-template-columns: auto 1fr;
 }
 
-.username {
+.username-box {
     color: #385898;
     margin-left: 0.5rem;
 }
@@ -177,7 +166,7 @@ body {
 }
 
 .received-attachment{
-    padding: 0.5em 0;
+    padding: 0.5rem 0;
 }
 
 .feed-img-attachment {
@@ -199,4 +188,53 @@ body {
     background-color: #9cb4d8;
     border: 2px solid #9cb4d8;
     outline: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* post */
+    .fb-post-padding {
+        padding: 0.7rem;
+    }
+
+    .fb-post-footer {
+        padding: 0.8rem 0.7rem 0.8rem 0.7rem;
+    }
+    
+    .fb-feed-wrapper {
+        width: 90%;    
+        font-size: 1.2em;
+    }
+    .fb-post {
+        width: 90%;    
+        font-size: 1.2em;
+    }
+
+    .user-pic-thumbnail {
+        max-width: 50px;;
+        min-height: 50px;
+    }
+
+    /* feed */
+    .username-box {
+        margin-left: 0.7rem;
+    }
+    
+    .feed-content {
+        margin: 0 0.7rem;
+    }
+
+    .feed-engagement {
+        padding: 0.5rem 0.7rem;
+    }
+    
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .fb-feed-wrapper {
+        width: 50%;
+    }
+    .fb-post  {
+        width: 50%; 
+    }
 }
