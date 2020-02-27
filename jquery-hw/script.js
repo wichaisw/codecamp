@@ -10,7 +10,6 @@ $(document).ready(function() {
   };
 
   //click 'Photo' button to preview an image
-  
   $("#image-video-attach-btn").click(function() {
     let attachmentUrl = $("#image-video-attach-url").val();
     $(".img-attachment").attr("src", `${attachmentUrl}`);
@@ -19,23 +18,36 @@ $(document).ready(function() {
     };
   });
 
+  // also preview an image after press enter button, mouse leaves url form, and url value is changed.
+  $("#image-video-attach-url").on({
+    keydown: function(e) {
+      if (e.which == 13) {
+        $(".img-attachment").attr("src", `${$(this).val()}`);
+        if ($(this).val() !== "") {
+        $(".img-attachment").css({display: "block"});
+        };
+      };
+    },
 
-  //preview an image after mouse leave the form too
-  $("#image-video-attach-url").keydown(function(e) {
-    if (e.which == 13) {
+    mouseleave: function() {
       $(".img-attachment").attr("src", `${$(this).val()}`);
       if ($(this).val() !== "") {
-      $(".img-attachment").css({display: "block"});
+        $(".img-attachment").css({display: "block"});
       };
-    };
+    },
+
+    change: function() {
+      $(".img-attachment").attr("src", `${$(this).val()}`);
+      if ($(this).val() !== "") {
+        $(".img-attachment").css({display: "block"});
+      };
+    }
   });
   
-  $("#image-video-attach-url").mouseleave(function() {
-    $(".img-attachment").attr("src", `${$(this).val()}`);
-    if ($(this).val() !== "") {
-      $(".img-attachment").css({display: "block"});
-    };
-  });
+  
+
+  //preview an image after mouse leave the form too
+  
 
   // add feed if #post-text iss not empty
   $(".post-button").click(function() {
