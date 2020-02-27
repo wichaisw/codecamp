@@ -28,10 +28,21 @@
                 <div class="feed-engagement fb-post-padding">
                     <button class="like-button">Like</button>
                 </div>
-                <div class="fb-post-padding"> comment </div>
+                <div class="fb-post-padding">
+                    <form class="fb-comment-grid">
+                        <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
+                        <label for="comment-text">
+                            <input type="text" name="comment-text" class="comment-text" rows="1" placeholder="Write a comment...">
+                        </label>
+                    </form>
+                </div>
             </div>
         </div>
-
+        
+        <div class="replied-grid">
+            <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
+            <p>${comment}</p>
+        </div>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./script.js"></script>
