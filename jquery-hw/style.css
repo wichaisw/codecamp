@@ -204,6 +204,7 @@ body {
     border-radius: 0.2rem;
     outline: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .like-button:hover {
@@ -346,5 +347,4 @@ body {
     .fb-post  {
         width: 40%; 
     }
-
 }

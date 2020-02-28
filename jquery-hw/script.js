@@ -86,7 +86,7 @@ $(document).ready(function() {
       if (e.which == 13) {
         e.preventDefault();
         if (comment !== "" && comment !== "\n") {
-          $(this).after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="comment-content"> <div><span class="username">${nickname}</span> ${comment}</div> <span class="feed-timestamp">${timeStamp.toLocaleString()}</span> </div> </div>`);
+          $(this).parent().children().last().after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="comment-content"> <div><span class="username">${nickname}</span> ${comment}</div> <span class="feed-timestamp">${timeStamp.toLocaleString()}</span> </div> </div>`);
           
         } else {
           alert("You say it best,\nwhen you say nothing at all.");
