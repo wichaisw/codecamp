@@ -310,9 +310,16 @@ array1 = [
   { name: "peach", birth: "2002-10-13" },
 ];
 
+// solution 1 .slice()
 let array2 = array1.filter(function(item) {
   return item.birth.slice(0,4) < 2000;
 });
+
+// solution 2 .split()
+let array2 = array1.filter(function(item) {
+  return item.birth.split("-")[0] < 2000;
+});
+
 
 /*
  * array2 [
