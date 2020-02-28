@@ -328,3 +328,29 @@ let array2 = array1.filter(function(item) {
  * ] 
  */
 // filter คนเกิดก่อนปี 2000
+
+// exercise 7.2.1
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+let map1 =  new Map (Object.entries(salaries));
+let sum = 0;
+for (let i of map1) {
+  sum = sum + i[1] 
+};
+
+console.log(sum)
+
+// exercise 7.2.2
+
+let user = {
+  name: 'John',
+  age: 30,
+};
+
+let map2 = new Map(Object.entries(user));
+map2.size
+
+Object.keys(user).length;
