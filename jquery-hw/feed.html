@@ -41,7 +41,10 @@
         
         <div class="replied-grid">
             <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
-            <p>${comment}</p>
+            <div class="comment-content">
+                <div>${comment}</div>
+                <span class="feed-timestamp">${timeStamp.toLocaleString()}</span>
+            </div>
         </div>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

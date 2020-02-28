@@ -81,10 +81,12 @@ $(document).ready(function() {
   // press enter to reply
   $(".fb-feed-wrapper").on("keydown", ".comment-text", function(e) {
     let comment = $(this).val()
+    let timeStamp = new Date();
+
       if (e.which == 13) {
         e.preventDefault();
         if (comment !== "" && comment !== "\n") {
-          $(this).after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <p>${comment}</p> </div>`);
+          $(this).after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="comment-content"> <div>${comment}</div> <span class="feed-timestamp">${timeStamp.toLocaleString()}</span> </div> </div>`);
           
         } else {
           alert("You say it best,\nwhen you say nothing at all.");
