@@ -64,7 +64,7 @@ $(document).ready(function() {
     let attachmentUrl = $("#image-video-attach-url").val();
     let postText = $("#post-text").val();
 
-    let htmlFeed = `<div class="fb-feed-template"> <div class="fb-feed-layout"> <div class="feed-header-grid fb-post-padding"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="username-box"> <b>${nickname}</b> <br> ${timeStamp.toLocaleString()} </div> </div> <div class="feed-content"> <div class="received-post">${postText}</div> <div class="received-attachment"> <img src="${attachmentUrl}" class="feed-img-attachment"> </div> </div> <div class="feed-engagement fb-post-padding"> <button class="like-button">Like</button> </div> <div class="fb-post-padding"> <form class="fb-comment-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <label for="comment-text"> <textarea name="comment-text" class="comment-text" rows="2" placeholder="Write a comment..."></textarea> </label> </form> </div> </div> </div>`
+    let htmlFeed = `<div class="fb-feed-template"> <div class="fb-feed-layout"> <div class="feed-header-grid fb-post-padding"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="username-box"> <span class="username">${nickname}</span> <br> ${timeStamp.toLocaleString()} </div> </div> <div class="feed-content"> <div class="received-post">${postText}</div> <div class="received-attachment"> <img src="${attachmentUrl}" class="feed-img-attachment"> </div> </div> <div class="feed-engagement fb-post-padding"> <button class="like-button">Like</button> </div> <div class="fb-post-padding"> <form class="fb-comment-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <label for="comment-text"> <textarea name="comment-text" class="comment-text" rows="2" placeholder="Write a comment..."></textarea> </label> </form> </div> </div> </div>`
 
     if (postText !== "" || attachmentUrl !== "") {
       $(".fb-feed-wrapper").css({display: "flex"});
@@ -86,7 +86,7 @@ $(document).ready(function() {
       if (e.which == 13) {
         e.preventDefault();
         if (comment !== "" && comment !== "\n") {
-          $(this).after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="comment-content"> <div>${comment}</div> <span class="feed-timestamp">${timeStamp.toLocaleString()}</span> </div> </div>`);
+          $(this).after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="comment-content"> <div><span class="username">${nickname}</span> ${comment}</div> <span class="feed-timestamp">${timeStamp.toLocaleString()}</span> </div> </div>`);
           
         } else {
           alert("You say it best,\nwhen you say nothing at all.");

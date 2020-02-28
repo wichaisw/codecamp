@@ -160,8 +160,12 @@ body {
 }
 
 .username-box {
-    color: #385898;
     margin-left: 0.5rem;
+}
+
+.username {
+    color: #385898;
+    font-weight: bold;
 }
 
 .feed-content {
@@ -174,7 +178,7 @@ body {
 
 .received-post {
     padding: 0.5rem 0;
-
+    margin-left: 0.5em;
 }
 
 .received-attachment{
@@ -258,6 +262,8 @@ body {
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
+    overflow: hidden;
+    margin: 0.5em;
 }
 
 .feed-timestamp {

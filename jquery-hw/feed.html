@@ -13,7 +13,7 @@
                 <div class="feed-header-grid fb-post-padding">
                     <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
                     <div class="username-box">
-                        <b>${nickname}</b> <br>
+                        <span class="username">${nickname}</span> <br>
                         ${timeStamp.toLocaleString()}
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 <div class="fb-post-padding">
                     <form class="fb-comment-grid">
                         <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
-                        <label for="comment-text" class="comment-text">
+                        <label for="comment-text">
                             <textarea name="comment-text" class="comment-text" rows="2" placeholder="Write a comment..."></textarea>
                         </label>
                     </form>
@@ -42,7 +42,7 @@
         <div class="replied-grid">
             <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
             <div class="comment-content">
-                <div>${comment}</div>
+                <div><span class="username">${nickname}</span> ${comment}</div>
                 <span class="feed-timestamp">${timeStamp.toLocaleString()}</span>
             </div>
         </div>
