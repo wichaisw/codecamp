@@ -246,6 +246,9 @@ body {
     outline: none;
     border: none;   
     overflow: hidden;
+    /* background-color: wheat;
+    border-radius: 5em;
+    margin: auto 0; */
 }
 
 .replied-grid {

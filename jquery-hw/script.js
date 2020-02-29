@@ -90,7 +90,12 @@ $(document).ready(function() {
   $(".fb-feed-wrapper").on("keydown", ".comment-text", function(e) {
     let comment = $(this).val()
     let timeStamp = new Date();
-      if (e.which == 13) {
+
+      if (e.which == 13 && e.shiftKey) {
+        $(this).text("\n")
+      }
+      
+      if (e.which == 13 && !e.shiftKey) {
         e.preventDefault();
         if (comment !== "" && comment !== "\n") {
           $(this).parent().children().last().after(`<div class="replied-grid"> <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> <div class="comment-content"> <div><span class="username">${nickname}</span> ${comment}</div> <span class="feed-timestamp">${timeStamp.toLocaleString()}</span> </div> </div>`);
