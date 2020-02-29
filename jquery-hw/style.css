@@ -370,4 +370,13 @@ body {
     .fb-post  {
         width: 40%; 
     }
+    .comment-send-button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    .comment-send-button {
+        display: none;
+    }
 }
