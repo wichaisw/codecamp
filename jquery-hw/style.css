@@ -223,6 +223,9 @@ body {
     animation-duration: 0.2s;
 }
 
+.like-button + span {
+    font-size: 0.7em;
+}
 
 /* comment section */
 .fb-comment-grid {
