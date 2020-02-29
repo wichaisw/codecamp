@@ -20,8 +20,9 @@ body {
     margin: 0;
     color: #ffffff;
     font-weight: bold;
-    height: 70px;
+    height: 50px;
     box-sizing: border-box;
+    padding: 0;
 }
 
 #main-nav li {
@@ -29,7 +30,7 @@ body {
 }
 
 .nav-logo {
-    height: 60px;
+    height: 40px;
 }
 
 .nav-user {
@@ -170,8 +171,8 @@ body {
 }
 
 .post-button:active {
-    background-color: #29487d;
-    border: 2px solid #7faafd;
+    background-color: #e58900;
+    border: 2px solid #ffad32;
     outline: none;
 }
 /* focus */
@@ -195,7 +196,10 @@ body {
 
 .fb-feed-layout {
     background-color: #101010;
+}
 
+.fb-feed-layout .user-pic-thumbnail {
+    box-shadow: 0 1px 6px rgba(256, 256, 256, 0.2), 0 1px 4px rgba(256, 256, 256, 0.2);
 }
 
 .feed-header-grid {
@@ -252,11 +256,12 @@ body {
 }
 
 .like-button:hover {
-    background-color: #f2f3f5;
+    background-color: #ffc166;
 }
 
 .liked-button-clicked {
-    color: #ff9900;
+    color: #ffffff;
+    background-color: #ff9900;;
 }
 
 .like-button:active {
@@ -297,8 +302,8 @@ body {
 
 .comment-send-button {
     height: 2em;
-    background-color: #9cb4d8;
-    border: 2px solid #9cb4d8;
+    background-color: #ff9900;
+    border: 2px solid #ff9900;
     border-radius: 2px;
     color: #ffffff;
     cursor: pointer;
@@ -306,8 +311,8 @@ body {
 }
 
 .comment-send-button:active {
-    background-color: #29487d;
-    border: 2px solid #7faafd;
+    background-color: #e58900;
+    border: 2px solid #ffad32;
     outline: none;
 }
 
