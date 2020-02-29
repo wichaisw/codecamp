@@ -25,6 +25,8 @@ $(document).ready(function() {
         $(".img-attachment").attr("src", `${$(this).val()}`);
         if ($(this).val() !== "") {
         $(".img-attachment").css({display: "block"});
+        } else {
+          $(".img-attachment").css({display: "none"});
         };
       };
     },
@@ -33,6 +35,8 @@ $(document).ready(function() {
       $(".img-attachment").attr("src", `${$(this).val()}`);
       if ($(this).val() !== "") {
         $(".img-attachment").css({display: "block"});
+      } else {
+        $(".img-attachment").css({display: "none"});
       };
     },
 
@@ -40,6 +44,8 @@ $(document).ready(function() {
       $(".img-attachment").attr("src", `${$(this).val()}`);
       if ($(this).val() !== "") {
         $(".img-attachment").css({display: "block"});
+      } else {
+        $(".img-attachment").css({display: "none"});
       };
     }
   });
