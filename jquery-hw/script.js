@@ -65,6 +65,7 @@ $(document).ready(function() {
       $("#post-text").val("");
       $("#image-video-attach-url").val("");
       $(".img-attachment").attr("src", "");
+      $(".img-attachment").css({display: "none"});
     } else {
       alert("You say it best,\nwhen you say nothing at all.");
     };
