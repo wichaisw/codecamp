@@ -16,7 +16,28 @@ body {
     list-style: none;
     margin: 0;
     color: #ffffff;
-    text-transform: uppercase;
+    font-weight: bold;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+#main-nav li {
+    padding: 15px;
+}
+
+.nav-logo {
+    height: 60px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: #ffa31a;
+}
+
+.nav-user .user-pic-thumbnail {
+    padding: 7px;
 }
 
 /* main box: contain post and prepended feed */
