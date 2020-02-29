@@ -46,6 +46,10 @@ body {
 }
 
 /* facebook post content */
+.post-timestamp {
+    font-size: 0.7em;
+}
+
 .fb-post-content {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -111,8 +115,6 @@ body {
     margin: 0.5rem 0;
 }
 
-
-
 /* post submit section */
 .fb-post-footer {
     padding: 0.7rem 0.5rem 0.7rem 0.5rem;
@@ -146,6 +148,7 @@ body {
     height: auto;
     margin: 10px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .fb-feed-layout {
@@ -271,10 +274,14 @@ body {
 .replied-grid {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 0.7em;
+    column-gap: 0.4em;
     box-sizing: border-box;
     word-wrap: break-word;
     margin-bottom: 0.5rem;
+}
+
+.replied-grid .user-pic-thumbnail {
+    transform: scale(0.7);
 }
 
 .comment-content-box {
@@ -335,15 +342,19 @@ body {
     }
 
     .user-pic-thumbnail {
-        max-width: 50px;;
-        min-height: 50px;
+        max-width: 40px;;
+        min-height: 40px;
     }
 
     /* feed */
+    .fb-comment-grid {
+        column-gap: 0.2em;
+    }
+
     .username-box {
         margin-left: 0.7rem;
     }
-    
+
     .feed-content {
         margin: 0 0.7rem;
     }
@@ -351,7 +362,20 @@ body {
     .feed-engagement {
         padding: 0.5rem 0.7rem;
     }
+
+    .replied-grid {
+        column-gap: 0;
+    }
+
+    .comment-content {
+        margin: 0;
+        font-size: 0.8em;
+    }
     
+    .comment-send-button {
+        height: 1.8em;
+        font-size: 0.8em;
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
