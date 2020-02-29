@@ -76,8 +76,8 @@ $(document).ready(function() {
   $(".fb-feed-wrapper").on("click", ".like-button", function() {
     let likeCounterDisplay = $(this).next();
 
-    $(this).toggleClass("blue-liked-button");
-    if ($(this).attr("class") == "like-button blue-liked-button") {
+    $(this).toggleClass("liked-button-clicked");
+    if ($(this).attr("class") == "like-button liked-button-clicked") {
       totalLike = totalLike + 1;
       likeCounterDisplay.html(`${totalLike} liked`);
     } else if ($(this).attr("class") == "like-button") {
