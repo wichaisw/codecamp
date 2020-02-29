@@ -1,10 +1,25 @@
 body {
     margin: 0 auto;
-    background-color: #e9ebee;
+    background-color: #1b1b1b   ;
     font-family: 'Open Sans', sans-serif;
 }
 
+/* nav bar */
+.nav-box {
+    background-color: #292929;
+    padding: 0 8px;
+}
 
+#main-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* main box: contain post and prepended feed */
 #main-box {
     display: flex;   
     flex-direction: column;
@@ -16,33 +31,25 @@ body {
 .fb-post {
     display: flex;
     flex-direction: column;
-    background-color: #f5f6f7;
+    background-color: #101010;
     width: 25%;
     height: auto;
-    border: 1px solid #e1e3e5;
+    border: 1px solid #363636;
     border-radius: 5px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 6px rgba(256, 256, 256, 0.2), 0 1px 4px rgba(256, 256, 256, 0.2);
 }
-
-/* .fb-post:hover {
-    margin: 2rem;
-    animation-name: post-scale;
-    animation-duration: 1s;
-}
-
-@keyframes post-scale {
-    from {transform: scale(1.0);}
-    to {transform: scale(1.2);}
-} */
 
 .fb-post-padding {
     padding: 0.5rem;
 }
 
 .fb-post-header {
-    background-image: linear-gradient(to bottom, #d3d3d3, #f5f6f7);
-    border-bottom: 2px solid #e7e9eb;
+    background-color: #101010;
+    /* background-image: linear-gradient(to bottom, #d3d3d3, #f5f6f7); */
+    color: #ffa31a;
+    border-bottom: 2px solid #1d1d1d;
     padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+    border-radius: 4px 4px 0  0;
 }
 
 /* facebook post content */
@@ -55,7 +62,7 @@ body {
     grid-template-columns: auto 1fr;
     column-gap: 0.5rem;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: #363636;
     /* border: 1px solid black; */
     height: auto;
     
@@ -84,11 +91,13 @@ body {
     outline: none;
     border: none;
     overflow: hidden;
+    background-color: #363636;
+    color: #ffffff;
 }
 
 /* attachment section */
 .fb-post-attachment {
-    background-color: #ffffff;
+    background-color: #161616;
 }
 
 .fb-post-attachment-form {
@@ -100,6 +109,11 @@ body {
     width: auto;
     height: 100%;
     margin-right: 0.5rem;
+    background-color: #ff9900;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 5px 8px;
 }
 
 #image-video-attach-url {
@@ -122,8 +136,8 @@ body {
 
 .post-button {
     width: 100%;   
-    background-color: #9cb4d8;
-    border: 2px solid #9cb4d8;
+    background-color: #ff9900;
+    border: 2px solid #ff9900;
     border-radius: 2px;
     padding: 0.5rem;
     color: #ffffff;

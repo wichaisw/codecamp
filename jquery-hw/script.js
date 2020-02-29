@@ -7,6 +7,8 @@ $(document).ready(function() {
     nickname = prompt("What's your nickname?");
   };
 
+  $(".nav-user > span").text(`${nickname}`)
+
   //click 'Photo' button to preview an image
   $("#image-video-attach-btn").click(function() {
     let attachmentUrl = $("#image-video-attach-url").val();
