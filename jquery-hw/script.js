@@ -7,7 +7,7 @@ $(document).ready(function() {
     nickname = prompt("What's your nickname?");
   };
 
-  $(".nav-user > span").text(`${nickname}`)
+  $(".nav-user > span > a").text(`${nickname}`)
 
   //click 'Photo' button to preview an image
   $("#image-video-attach-btn").click(function() {
