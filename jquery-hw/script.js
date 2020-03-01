@@ -70,6 +70,7 @@ $(document).ready(function() {
   });
 
   // add feed if #post-text is not empty
+
   $(".post-button").click(function() {
     let timeStamp = new Date();
     let attachmentUrl = $("#image-video-attach-url").val();
@@ -90,19 +91,33 @@ $(document).ready(function() {
   });
 
   // like-button toggle & totalLike counter based on a class toggle
-  $(".fb-feed-wrapper").on("click", ".like-button", function() {
-    let totalLike = 0;
-    let likeCounterDisplay = $(this).next();
-    $(this).toggleClass("liked-button-clicked");
-    if ($(this).attr("class") == "like-button liked-button-clicked") {
-      totalLike = totalLike + 1;
-      likeCounterDisplay.html(`${totalLike} liked`);
-    } else if ($(this).attr("class") == "like-button") {
-      totalLike = totalLike - 1;
-      likeCounterDisplay.html(`${totalLike} liked`);
-    };
 
-    if (totalLike == 0) {
+  $(".fb-feed-wrapper").on("click", ".like-button", function() {
+    let likeCounterDisplay = $(this).next();
+    
+    $(this).toggleClass("liked-button-clicked");
+
+    if ($(this).attr("class") == "like-button liked-button-clicked") {
+      likeValue = 1;
+    } else if ($(this).attr("class") == "like-button") {
+      likeValue = -1;
+    };
+    // totalLike = totalLike + likeValue;
+    likeCounterDisplay.val( Number( likeCounterDisplay.val() ) + likeValue); 
+    likeCounterDisplay.html(`${likeCounterDisplay.val()} liked`);
+
+    // old version with totalLike, a shared variable bug
+    /*
+     * if ($(this).attr("class") == "like-button liked-button-clicked") {
+     *   totalLike = totalLike + 1;
+     *   likeCounterDisplay.html(`${totalLike} liked`);
+     * } else if ($(this).attr("class") == "like-button") {
+     *   totalLike = totalLike -1;
+     *   likeCounterDisplay.html(`${totalLike} liked`);
+     * };
+    */
+
+    if (likeCounterDisplay.val() == 0) {
       likeCounterDisplay.css({"display": "none"})
     } else {
       likeCounterDisplay.css({"display" : "inline"})
