@@ -9,7 +9,17 @@ $(document).ready(function() {
 
   $(".nav-user > span > a").text(`${nickname}`)
 
-  //click 'Photo' button to preview an image
+  // highlight fb-post when focus on text area
+  $("#post-text").on({
+    focus: function() {
+      $("#main-box").addClass("main-box-blur-fb-post-highlighted");
+    },
+    blur: function() {
+      $("#main-box").removeClass("main-box-blur-fb-post-highlighted");
+    }
+  });
+
+  // click 'Photo' button to preview an image
   $("#image-video-attach-btn").click(function() {
     let attachmentUrl = $("#image-video-attach-url").val();
     $(".img-attachment").attr("src", `${attachmentUrl}`);
@@ -78,11 +88,11 @@ $(document).ready(function() {
   });
 
   // like-button toggle & totalLike counter based on a class toggle
-  let totalLike = 0;
+
   
   $(".fb-feed-wrapper").on("click", ".like-button", function() {
+    let totalLike = 0;
     let likeCounterDisplay = $(this).next();
-
     $(this).toggleClass("liked-button-clicked");
     if ($(this).attr("class") == "like-button liked-button-clicked") {
       totalLike = totalLike + 1;
