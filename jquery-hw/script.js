@@ -13,9 +13,11 @@ $(document).ready(function() {
   $("#post-text").on({
     focus: function() {
       $("#main-box").addClass("main-box-blur-fb-post-highlighted");
+      $(".fb-feed-wrapper").addClass("non-highlighted-element");
     },
     blur: function() {
       $("#main-box").removeClass("main-box-blur-fb-post-highlighted");
+      $(".fb-feed-wrapper").removeClass("non-highlighted-element");
     }
   });
 
@@ -88,8 +90,6 @@ $(document).ready(function() {
   });
 
   // like-button toggle & totalLike counter based on a class toggle
-
-  
   $(".fb-feed-wrapper").on("click", ".like-button", function() {
     let totalLike = 0;
     let likeCounterDisplay = $(this).next();

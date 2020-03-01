@@ -5,9 +5,13 @@ body {
 }
 
 .main-box-blur-fb-post-highlighted {
-    z-index: 5;
+    z-index: 1;
     background-color: rgba(204, 204, 204, 0.3);
     width: 100%;
+}
+
+.non-highlighted-element {
+    z-index: -1;
 }
 
 /* nav bar */
@@ -241,8 +245,7 @@ body {
     width: 25%;
     height: auto;
     margin: 10px;
-    box-sizing: border-box;    
-    z-index: -1;
+    box-sizing: border-box;   
 }
 
 .fb-feed-template {

@@ -39,16 +39,18 @@
                     </form>
                 </div>
             </div>
+
+            
+            <div class="replied-grid">
+                <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
+                <div class="comment-content">
+                    <div><span class="username">${nickname}</span> ${comment}</div>
+                    <span class="feed-timestamp">${timeStamp.toLocaleString()}</span>
+                </div>
+            </div>
+        
         </div>
         
-        <div class="replied-grid">
-            <img src="./img/anonymous.jpg" alt="user-pic-thumbnail" class="user-pic-thumbnail"> 
-            <div class="comment-content">
-                <div><span class="username">${nickname}</span> ${comment}</div>
-                <span class="feed-timestamp">${timeStamp.toLocaleString()}</span>
-            </div>
-        </div>
-    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./script.js"></script>
 </body>
