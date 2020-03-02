@@ -302,6 +302,7 @@ body {
 .feed-engagement {
     border-bottom: 1px solid #e7e9eb;
     padding: 0.5rem;
+    margin: 0 0.5rem;
 }
 
 .like-button {
