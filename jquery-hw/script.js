@@ -89,6 +89,14 @@ $(document).ready(function() {
     } else {
       alert("You say it best,\nwhen you say nothing at all.");
     };
+    
+    // if (postText == "" && attachmentUrl !== "") {
+    //   $(".received-post").css({display: "none"});
+    // } 
+    // if (attachmentUrl == "" && postText !== "") {
+    //   $(".received-attachment").css({display: "none"});
+    // }
+
   });
 
   // like-button toggle & totalLike counter based on a class toggle
