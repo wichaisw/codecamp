@@ -79,6 +79,7 @@ $(document).ready(function() {
 
     if (postText !== "" || attachmentUrl !== "") {
       $(".fb-feed-wrapper").css({display: "flex"});
+
       $(".fb-feed-wrapper").prepend(htmlFeed);
 
       $("#post-text").val("");
