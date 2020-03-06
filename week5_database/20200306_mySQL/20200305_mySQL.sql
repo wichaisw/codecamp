@@ -111,10 +111,10 @@ group by d.customer_name
 having count(a.account_number) >= 2;
 
 # exercise 5.4.1 having (filter grouping / must be used after having)
-select d.customer_name, sum(a.balance) 
+select d.customer_name, sum(a.balance) as total_amount 
 from account a inner join depositor d
 on a.account_number = d.account_number
 group by d.customer_name
 having count(a.account_number) >= 2
-order by d.customer_name;
+order by total_amount desc;
 	
