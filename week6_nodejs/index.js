@@ -93,46 +93,55 @@
   // })
 
 
-let timerArr = ["a", "b", "c", "d"]
 
-function callABCD(index) {
+
+function timedABCD(index) {
   return new Promise(function (fulfill, reject) {
-    if (typeof index == "number") {
+    // if (typeof index == "number") {
       setTimeout(function(){
         fulfill(index);
       }, 1000)
-    } else {
-      reject("error");
-    }
+    // } 
   });
 }
 
-callABCD(0)
-  .then(function(result) {
-    console.log(timerArr[result]);
-    return callABCD(1);
-  })
-  .then(function(result) {
-    console.log(timerArr[result]);
-    return callABCD(2);
-  })
-  .then(function(result) {
-    console.log(timerArr[result]);
-    return callABCD(3);
-  })
-  .then(function(result) {
-    console.log(timerArr[result]);
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
-
-  
-// for (i=0; i<4; i++) {
-//   callABCD(i)
-//     .then(function(result) {
-//       console.log(timerArr[result])
-//     })
-// };
+// then method
+// timedABCD("a")
+//   .then(function(result) {
+//     console.log(result);
+//     return timedABCD("b");
+//   })
+//   .then(function(result) {
+//     console.log(result);
+//     return timedABCD("c");
+//   })
+//   .then(function(result) {
+//     console.log(result);
+//     return timedABCD("d");
+//   })
+//   .then(function(result) {
+//     console.log(result);
+//   })
+  // .catch(function(err) {
+  //   console.log(err);
+  // });
 
 
+  // async await
+// async function awaitABCD() {
+//   const input1 = await timedABCD("a")
+//   const input2 = await timedABCD("b")
+//   const input3 = await timedABCD("c")
+//   const input4 = await timedABCD("d")
+//   console.log(input1, input2, input3, input4)
+// }
+// awaitABCD()
+
+// async await loop
+let abcdArr = ["a", "b", "c", "d"]
+  async function awaitABCD() {
+    for (i=0; i<4; i++) {
+      console.log(await timedABCD(abcdArr[i]))
+    }
+  }
+  awaitABCD();
