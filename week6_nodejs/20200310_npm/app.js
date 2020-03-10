@@ -1,13 +1,24 @@
 // ได้ function express() 
 const express = require("express");
+// เรียกใช้ body-parser
+const bodyParser = require("body-parser")
 // ได้ ผลจากการ return function express()
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 // เรียกไฟล์ route
 const userRoute = require("./routes/userRoute")
 const itemRoute = require("./routes/itemRoute")
+
 app.use("/item", itemRoute)
 app.use("/user", userRoute); 
 
+app.post("/addNumber", function(req, res) {
+  console.log(req.body);
+  res.send(req.body);
+})
 
 app.get("/hello", function(req, res) {
   res.send("hello, world")
