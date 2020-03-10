@@ -1,11 +1,15 @@
-const express = require("express");
 // ได้ function express() 
-const app = express();
+const express = require("express");
 // ได้ ผลจากการ return function express()
+const app = express();
+// เรียกไฟล์ route
+const userRoute = require("./routes/userRoute")
+const itemRoute = require("./routes/itemRoute")
+app.use("/item", itemRoute)
+app.use("/user", userRoute); 
 
-console.log(typeof express);
 
-app.get("/sayhi", function(req, res) {
+app.get("/hello", function(req, res) {
   res.send("hello, world")
 });
 
@@ -17,9 +21,31 @@ app.get("/bye", function(req, res) {
   res.send("Good Bye");
 })
 
-app.post("/google", (req, res) => {
-  res.send("Google");
+app.get("/bye", function(req, res) {
+  res.send("Good Bye");
 })
 
-app.listen(3000);
+// app.get("/user/first", function(req, res) {
+//   res.send("hello first user")
+// })
+
+// app.get("/user/second", function(req, res) {
+//   res.send("hello second user")
+// })
+
+// app.post("/hello", (req, res) => {
+//   res.send("hello POST");
+// })
+
+// app.put("/hello", (req, res) => {
+//   res.send("hello PUT");
+// })
+
+// app.delete("/hello", (req, res) => {
+//   res.send("hello DELETE");
+// })
+
 app.listen(5000);
+app.listen(3000, function() {
+  console.log("server is running")
+});
