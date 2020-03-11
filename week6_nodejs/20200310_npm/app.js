@@ -8,12 +8,19 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// เรียกไฟล์ route
-const userRoute = require("./routes/userRoute")
-const itemRoute = require("./routes/itemRoute")
+// เรียกไฟล์ route lab1
+const userRoute = require("./routes/userRoute");
+const itemRoute = require("./routes/itemRoute");
 
-app.use("/item", itemRoute)
+//Routes สองชั้น lab2
+const dogRoute = require("./routes/dogRoute");
+const catRoute = require("./routes/catRoute");
+
+app.use("/item", itemRoute);
 app.use("/user", userRoute); 
+app.use("/dog", dogRoute);
+app.use("/cat", catRoute);
+
 
 app.post("/addNumber", function(req, res) {
   console.log(req.body);
@@ -55,6 +62,9 @@ app.get("/bye", function(req, res) {
 // app.delete("/hello", (req, res) => {
 //   res.send("hello DELETE");
 // })
+
+
+
 
 app.listen(5000);
 app.listen(3000, function() {

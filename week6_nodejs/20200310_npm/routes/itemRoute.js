@@ -2,7 +2,7 @@ const express = require("express")
 const itemRoute = express.Router();
 
 itemRoute.get("/first", function(req, res) {
-  res.send("item1");;
+  res.send("item1");
 });
 
 itemRoute.get("/second", (req, res) => {
