@@ -31,19 +31,40 @@ app.get("/picture.png", function(req, res) {
 
 // receive query by request and operate it with cal() function
 app.get('/add', function(req, res) {
+  // function cal(a, b, mode) {
+  //   a = Number(a);
+  //   b = Number(b);
+  //   if (mode == "add") {
+  //     return String(a + b);
+  //   } else if (mode == "substract") {
+  //     return String(a - b);
+  //   } else if (mode == "multiply") {
+  //     return String(a * b);
+  //   } else if (mode == "divide") {
+  //     return String(a / b);
+  //   } else {
+  //     return "your mode is incorrect"; 
+  //   }
+  // }
+
   function cal(a, b, mode) {
     a = Number(a);
     b = Number(b);
-    if (mode == "add") {
-      return String(a + b);
-    } else if (mode == "substract") {
-      return String(a - b);
-    } else if (mode == "multiply") {
-      return String(a * b);
-    } else if (mode == "divide") {
-      return String(a / b);
-    } else {
-      return "your mode is incorrect"; 
+    switch (mode) {
+      case "add": 
+        return String(a + b);
+        break;
+      case "substract":
+        return String(a - b);
+        break;
+      case "multiply":
+        return String(a * b);
+        break;
+      case "divide":
+        return String(a / b);
+        break;
+      default:
+        return "your mode is incorrect";
     }
   }
 
