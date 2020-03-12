@@ -24,8 +24,39 @@ app.post("/myname", function(req, res) {
   res.send("name POST");
 });
 
+// return network status
 app.get("/picture.png", function(req, res) {
   res.status(404).send("404 NOT FOUND");
+});
+
+// receive query by request and operate it with cal() function
+app.get('/add', function(req, res) {
+  function cal(a, b, mode) {
+    a = Number(a);
+    b = Number(b);
+    if (mode == "add") {
+      return String(a + b);
+    } else if (mode == "substract") {
+      return String(a - b);
+    } else if (mode == "multiply") {
+      return String(a * b);
+    } else if (mode == "divide") {
+      return String(a / b);
+    } else {
+      return "your mode is incorrect"; 
+    }
+  }
+
+  let result = cal(req.query.a, req.query.b, req.query.mode);
+  res.send(result);
+});
+
+
+app.get("/query_path", function(req, res) {
+  console.log(req.query.name);
+  console.log(req.query.age);
+  console.log(req.query.number);
+  res.send(req.query);
 });
 
 
