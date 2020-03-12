@@ -1,8 +1,15 @@
 const express = require("express"); // import express module
 const app = express(); // create express
+const bodyParser = require("body-parser");
+
 const dogRoute = require("./routes/dogRoute");
 const catRoute = require("./routes/catRoute");
 const userRoute = require("./routes/userRoute");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded( {
+    extended: false 
+}));
 
 app.use("/dog", dogRoute);
 app.use("/cat", catRoute);
@@ -28,6 +35,15 @@ app.post("/myname", function(req, res) {
 app.get("/picture.png", function(req, res) {
   res.status(404).send("404 NOT FOUND");
 });
+
+// query string request example
+app.get("/query_path", function(req, res) {
+  console.log(req.query.name);
+  console.log(req.query.age);
+  console.log(req.query.number);
+  res.send(req.query);
+});
+
 
 // receive 'query string' via URL path and operate it with cal() function
 app.get('/add', function(req, res) {
@@ -73,10 +89,11 @@ app.get('/add', function(req, res) {
 });
 
 // parameters from URL path
-app.get("/cal/:a/:mode/:b/", function(req, res) {
-  
-    firstNumber = Number(req.params.a);
-    secondNumber = Number(req.params.b);
+app.get("/add/:a/:mode/:b/", function(req, res) {
+    let firstNumber = Number(req.params.a);
+    let secondNumber = Number(req.params.b);
+    let result;
+
     if (req.params.mode == "add") {
       result = firstNumber + secondNumber;
     } else if (req.params.mode == "substract") {
@@ -85,22 +102,37 @@ app.get("/cal/:a/:mode/:b/", function(req, res) {
       result = firstNumber * secondNumber;
     } else if (req.params.mode == "divide") {
       result = firstNumber / secondNumber;
+    } 
+    
+    if (result !== undefined) {
+      res.status(200).send(`The answer is ${String(result)}`);
     } else {
-      res.status(400).send(`<h1 style="color:red">400 Bad Request</h1><br>your mode is incorrect`); 
+      res.status(400).send(`<h1 style="color:red">400 Bad Request</h1><br>your mode is incorrect`)
     }
-  
-  res.status(200).send(`The answer is ${String(result)}`);
 });
 
+// POST 
+app.post("/add", function(req, res) {
+  let firstNumber = Number(req.body.a);
+  let secondNumber = Number(req.body.b);
+  let result;
 
+  if (req.body.mode == "add") {
+    result = firstNumber + secondNumber;
+  } else if (req.body.mode == "substract") {
+    result = firstNumber - secondNumber;
+  } else if (req.body.mode == "multiply") {
+    result = firstNumber * secondNumber;
+  } else if (req.body.mode == "divide") {
+    result = firstNumber / secondNumber;
+  }
 
-app.get("/query_path", function(req, res) {
-  console.log(req.query.name);
-  console.log(req.query.age);
-  console.log(req.query.number);
-  res.send(req.query);
-});
-
+  if (result !== undefined) {
+    res.status(200).send(`The answer is ${(result)}`);
+  } else {
+    res.status(400).send(`400 Bad Request \n your mode is incorrect`)
+  }
+})
 
 // set app listen on port 8000
 app.listen(8000, function() {
