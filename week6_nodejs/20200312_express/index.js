@@ -111,7 +111,7 @@ app.get("/add/:a/:mode/:b/", function(req, res) {
     }
 });
 
-// POST 
+// POST Method
 app.post("/add", function(req, res) {
   let firstNumber = Number(req.body.a);
   let secondNumber = Number(req.body.b);
@@ -133,6 +133,8 @@ app.post("/add", function(req, res) {
     res.status(400).send(`400 Bad Request \n your mode is incorrect`)
   }
 })
+
+
 
 // set app listen on port 8000
 app.listen(8000, function() {
