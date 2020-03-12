@@ -29,7 +29,7 @@ app.get("/picture.png", function(req, res) {
   res.status(404).send("404 NOT FOUND");
 });
 
-// receive query by request and operate it with cal() function
+// receive 'query string' via URL path and operate it with cal() function
 app.get('/add', function(req, res) {
   // function cal(a, b, mode) {
   //   a = Number(a);
@@ -69,8 +69,29 @@ app.get('/add', function(req, res) {
   }
 
   let result = cal(req.query.a, req.query.b, req.query.mode);
-  res.send(result);
+  res.status(200).send(`The answer is ${result}`);
 });
+
+// parameters from URL path
+app.get("/cal/:a/:mode/:b/", function(req, res) {
+  
+    firstNumber = Number(req.params.a);
+    secondNumber = Number(req.params.b);
+    if (req.params.mode == "add") {
+      result = firstNumber + secondNumber;
+    } else if (req.params.mode == "substract") {
+      result = firstNumber - secondNumber;
+    } else if (req.params.mode == "multiply") {
+      result = firstNumber * secondNumber;
+    } else if (req.params.mode == "divide") {
+      result = firstNumber / secondNumber;
+    } else {
+      res.status(400).send(`<h1 style="color:red">400 Bad Request</h1><br>your mode is incorrect`); 
+    }
+  
+  res.status(200).send(`The answer is ${String(result)}`);
+});
+
 
 
 app.get("/query_path", function(req, res) {
