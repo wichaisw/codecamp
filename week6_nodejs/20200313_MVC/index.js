@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express();
 
+const bodyParser = require("body-parser")
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded( {extended: false}) );
+
+// เลือกใช้ view engine เป็น ejs
+app.set("views", "./views");
+app.set("view engine", "ejs");
 
 // MVC Controller lab 1
 // lab 1-a. GET /static -> คืนค่าเป็น “Hello World”
@@ -51,12 +58,13 @@ app.get("/checkEvenNumber/:num", function(req, res) {
 // 2. Return the Success (200) response code if the input number is a even.
 
 app.get("/EvenNumber/:num", (req, res) => {
-  if(req.params.num %2 == 0) {
+  if(Number(req.params.num) % 2 == 0) {
     res.status(200).send(`${req.params.num} is a even number.`)
   } else {
     res.status(400).send(`Bad input <br> ${req.params.num} is not a even number`)
   }
 });
+
 
 
 // response code.
@@ -65,10 +73,14 @@ app.get("/EvenNumber/:num", (req, res) => {
 // 5. POST /number/2 -> [1,2]
 // 6. POST /number/5 -> [1,2,5]
 let numArr = [];
+
+app.get("/number", (req, res) => { 
+  res.status(200).send(numArr);
+});
+
 app.post("/number/:num", (req, res) => { 
-  numArr.push(req.params.num);
-  let numJSON = JSON.stringify(numArr);
-  res.status(201).send(numJSON);
+  numArr.push(Number(req.params.num));
+  res.status(201).send(numArr);
 });
 
 
@@ -80,9 +92,37 @@ app.delete("/number/:num", (req, res) => {
   res.send(numArr);
 });
 
-app.put
+// PUT method by splice มีปัญหาเพราะ splice จัดการแค่ตัวแรกที่เจอ
+// app.put("/number/:oldnum/:newnum", (req, res) => {
+//   let oldIndex = numArr.indexOf(Number(req.params.oldnum));
+//   numArr.splice(oldIndex, 1, Number(req.params.newnum));
+//   res.send(numArr);
+// });
+
+// PUT solution
+app.put("/number/:from/:to", (req, res) => {
+  numArr = numArr.map( (item) => {
+    if(item == Number(req.params.from)) {
+      return Number(req.params.to);
+    } else {
+      return item;
+    }
+  });
+  res.send(numArr);
+});
+
+
+// 12. POST /countFields for counting the number of fields that submit via req.body (raw as the JSON object) for example,
+// 13. POST /countFields BODY {“a”:1,”b”:2,”c”:3} -> 3
+// 14. POST /countFields BODY {“a”:1,”b”:2,”c”:3,”d”:5} -> 4
+app.post("/countFields", (req, res) => {
+  // let jsonObj = JSON.parse(req.body.numObj);
+  let jsonLength = Object.keys(req.body).length;
+  res.status(200).send(String(jsonLength));
+}); // body-parser เปลี่ยน key & value จาก string เป็น object ให้
+
 
 app.listen(3000, () => {
-  console.log("server is running on port 3000")
+  console.log("server is running on port 3000");
 });
 
