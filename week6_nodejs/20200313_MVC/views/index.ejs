@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #000000;
       color: aliceblue;
-    
+      font-family: 'Roboto', sans-serif;
+      margin: 1rem;
     }
     .student-box {
       background-color: #FFFFFF;
@@ -38,12 +40,12 @@
   </p>
   
   <div main>
-    Student's names are 
+    Student List: 
     <% for (let student of studentsList) { %>
       <div class="student-box row">
         <span class="item-center col-8"><%=student.name%></span>
         <span class="item-center col-2"><%=student.age%></span>
-        <span class="item-center col-2"><a href="/student/<%=student.id%>">View Details</a></span>
+        <span class="item-center col-2"><a href="./student/<%=student.id%>">View Details</a></span>
       </div>
     <% } %>
   </div>
