@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: false}) );
 
-// เลือกใช้ view engine เป็น ejs
+// เลือกใช้ view engine เป็น ejs / กำหนดให้อ่านจากไฟล์ในโฟลเดอร์ views
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
@@ -15,35 +15,47 @@ app.get("/", (req, res) => {
     name: "Wichai", 
     age: "25", 
     numberList: [1,5,8,77,3], 
-    studentsList: [
-      {
-        "id": 1,
-        "picture": "🌽",
-        "name": "sonter",
-        "age": 18,
-        "point": 75,
-        "discription": "I'm sonter from computer engineering A university. I'm 18 years old."
-      },
-      {
-        "id": 2,
-        "picture": "🥑",
-        "name": "nat",
-        "age": 19,
-        "point": 78,
-        "discription": "I'm nat from computer engineering B university. I'm 19 years old."
-      },
-      {
-        "id": 3,
-        "picture": "🥦",
-        "name": "tle",
-        "age": 22,
-        "point": 97,
-        "discription": "I'm tle from computer engineering C university. I'm 22 years old."
-      }
-    ]
+    studentsList
   });
 });
 
+// render ไฟล์ student ใน โฟลเดอร์ views
+app.get("/student", (req, res) => {
+  res.render("student", {studentsList} );
+});
+
+app.get("/student/:id", (req, res) => {
+  let id = Number(req.params.id);
+  let targetStudent = studentsList.find(item => item.id === id);
+  res.render("student", {targetStudent});
+});
+
+let studentsList = [
+  {
+    "id": 1,
+    "picture": "🌽",
+    "name": "sonter",
+    "age": 18,
+    "point": 75,
+    "discription": "I'm sonter from computer engineering A university. I'm 18 years old."
+  },
+  {
+    "id": 2,
+    "picture": "🥑",
+    "name": "nat",
+    "age": 19,
+    "point": 78,
+    "discription": "I'm nat from computer engineering B university. I'm 19 years old."
+  },
+  {
+    "id": 3,
+    "picture": "🥦",
+    "name": "tle",
+    "age": 22,
+    "point": 97,
+    "discription": "I'm tle from computer engineering C university. I'm 22 years old."
+  }
+];
 
 
 // MVC Controller lab 1
