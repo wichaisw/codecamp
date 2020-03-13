@@ -1,13 +1,50 @@
 const express = require("express");
+const bodyParser = require("body-parser")
 const app = express();
 
-const bodyParser = require("body-parser")
+// ใช้ middleware body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: false}) );
 
 // เลือกใช้ view engine เป็น ejs
 app.set("views", "./views");
 app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+  res.render( "index", {items: "you", 
+    name: "Wichai", 
+    age: "25", 
+    numberList: [1,5,8,77,3], 
+    studentsList: [
+      {
+        "id": 1,
+        "picture": "🌽",
+        "name": "sonter",
+        "age": 18,
+        "point": 75,
+        "discription": "I'm sonter from computer engineering A university. I'm 18 years old."
+      },
+      {
+        "id": 2,
+        "picture": "🥑",
+        "name": "nat",
+        "age": 19,
+        "point": 78,
+        "discription": "I'm nat from computer engineering B university. I'm 19 years old."
+      },
+      {
+        "id": 3,
+        "picture": "🥦",
+        "name": "tle",
+        "age": 22,
+        "point": 97,
+        "discription": "I'm tle from computer engineering C university. I'm 22 years old."
+      }
+    ]
+  });
+});
+
+
 
 // MVC Controller lab 1
 // lab 1-a. GET /static -> คืนค่าเป็น “Hello World”
@@ -64,7 +101,6 @@ app.get("/EvenNumber/:num", (req, res) => {
     res.status(400).send(`Bad input <br> ${req.params.num} is not a even number`)
   }
 });
-
 
 
 // response code.
