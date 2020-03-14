@@ -218,9 +218,14 @@ body {
     height: 425px; 
 }
 
+.showreel-container label {
+    display: block;
+    height: 100%;
+}
+
 .showreel-overlay {
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: -1;  
 }
 
@@ -446,4 +451,5 @@ body {
     .mobile-container {
         margin-top: 40em;
     }
+    
 }
