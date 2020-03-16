@@ -72,7 +72,29 @@ app.post("/student", (req, res) => {
 
 app.delete("/student/:id", (req, res) => {
   studentsList = studentsList.filter(function(student) {
-    return student.id != req.params.id;
+    return student.id !== Number(req.params.id);
+  });
+  res.send(studentsList);
+});
+
+let newStudent = {}
+app.put("/student/:id", (req, res) => {
+  studentsList = studentsList.map(function(student) {
+
+    if (student.id == Number(req.params.id)) {
+      
+      newStudent = {
+        id: student.id,
+        picture: req.body.picture || student.picture,
+        name: req.body.name || student.name,
+        age: req.body.age || student.age,
+        point: req.body.point || student.point,
+        description: req.body.description || student.description
+      };
+
+      student = newStudent;
+    }
+    return student
   })
   res.send(studentsList);
 });
