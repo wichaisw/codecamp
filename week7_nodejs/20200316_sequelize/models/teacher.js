@@ -8,9 +8,19 @@ module.exports = (sequelize, Datatypes) => {
     }
   });
 
+// one-to-one
+  // teacher.associate = models => {
+  //   teacher.belongsTo(models.student)
+  // } 
+
+// one-to-many
   teacher.associate = models => {
-    teacher.belongsTo(models.student)
+    teacher.hasMany(models.student)
   } 
+
+  teacher.associate = models => {
+    teacher.belongsToMany(models.student, {through: "TeacherStudent"})
+  }
 
   return teacher;
 }

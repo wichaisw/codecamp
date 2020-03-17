@@ -11,8 +11,18 @@ module.exports = function(sequelize, Datatypes) {
     }
   });
 
+// one-to-one
+  // student.associate = models => {
+  //   student.hasOne(models.teacher)
+  // }
+
+// one-to-many
   student.associate = models => {
-    student.hasOne(models.teacher)
+    student.belongsTo(models.teacher)
+  }
+
+  student.associate = models => {
+    student.belongsToMany(models.teacher, {through: "TeacherStudent"})
   }
 
   return student;
