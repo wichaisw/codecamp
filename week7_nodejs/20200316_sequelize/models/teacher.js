@@ -8,5 +8,9 @@ module.exports = (sequelize, Datatypes) => {
     }
   });
 
+  teacher.associate = models => {
+    teacher.belongsTo(models.student)
+  } 
+
   return teacher;
 }

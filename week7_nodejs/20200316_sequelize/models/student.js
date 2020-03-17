@@ -5,8 +5,15 @@ module.exports = function(sequelize, Datatypes) {
     },
     year: {
       type: Datatypes.INTEGER
+    },
+    point: {
+      type: Datatypes.INTEGER
     }
   });
+
+  student.associate = models => {
+    student.hasOne(models.teacher)
+  }
 
   return student;
 }
