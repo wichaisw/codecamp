@@ -1,0 +1,16 @@
+.studentGrade {
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 5rem auto;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
