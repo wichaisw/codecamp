@@ -5,20 +5,13 @@ import './StudentGrade.css';
 function StudentGrade() {
   let studentScore = [];
   let studentGrade = [];
-  let myScore = Number(prompt("enter your score: "));
+  let myScore = prompt("enter your score: ");
   
-  // while (true) {
-  //   if(myScore !== null) {
-  //     studentScore.push(myScore);
-  //     myScore = Number(prompt("enter your score: "));
-  //   }
-  // }
-
-  for (let i=0; i<5; i++) {
-    myScore = Number(prompt("enter your score: "));
-    studentScore.push(myScore);
+  while(myScore !== "" && myScore !== null) {
+    studentScore.push(Number(myScore));
+    myScore = prompt("enter your score: ");
   }
-  
+
   for (let score of studentScore) {
     let grade;
     grade = (score >= 80 && "A") || (score >= 70 && "B") || (score >= 60 && "C") || (score >= 50 && "D") || "F";
@@ -35,6 +28,7 @@ function StudentGrade() {
     <div> 
 
       <table className="studentGrade">
+        <caption style={ {fontSize:"24px", fontWeight:"bold"} }>Student Report</caption>
         <thead>
           <tr>
             <th>No.</th>
@@ -46,15 +40,23 @@ function StudentGrade() {
         <tbody>
             {
               studentReport.map(function(item, index) {
-              return <tr> <td>{index+1}</td> <td>{item.score}</td> <td> {item.grade} </td> </tr>
+                return (
+                  <tr>
+                    <td>
+                      {index+1}
+                    </td>
+                    <td>
+                      {item.score}
+                    </td>
+                    <td>
+                      {item.grade}
+                    </td>
+                  </tr>
+                )
               })
-              
             }
-
-
         </tbody>
       </table>
-
 
     </div>
   );
