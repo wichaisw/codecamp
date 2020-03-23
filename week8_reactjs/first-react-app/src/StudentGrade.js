@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 // import logo from './logo.svg';
 import './StudentGrade.css';
 
@@ -41,7 +41,7 @@ function StudentGrade() {
             {
               studentReport.map(function(item, index) {
                 return (
-                  <tr>
+                  <tr key={index}>
                     <td>
                       {index+1}
                     </td>
