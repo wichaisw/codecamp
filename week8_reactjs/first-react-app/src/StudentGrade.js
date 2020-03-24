@@ -3,9 +3,12 @@ import React from 'react';
 import './StudentGrade.css';
 
 function StudentGrade() {
+  
   let studentScore = [];
   let studentGrade = [];
   let myScore = prompt("enter your score: ");
+  let studentNumber;
+
   
   while(myScore !== "" && myScore !== null) {
     studentScore.push(Number(myScore));
@@ -19,9 +22,17 @@ function StudentGrade() {
   }
 
   // turn studentScore & studentGrade arrays into an object
-  let studentReport = []
+  let studentReport = [];
   for (let i=0; i<studentScore.length; i++) {
     studentReport.push({ "score": studentScore[i], "grade": studentGrade[i] });
+  }
+
+  // 
+  const rowRemoveHandler = (event) => {
+    event.preventDefault();
+    let row = event.target.parentNode.parentNode;  
+    console.log(row);
+    row.remove();
   }
 
   return (
@@ -34,27 +45,33 @@ function StudentGrade() {
             <th>No.</th>
             <th>Score</th>
             <th>Grade</th>
+            <th>Option</th>
           </tr>
         </thead>
 
         <tbody>
-            {
-              studentReport.map(function(item, index) {
-                return (
-                  <tr key={index}>
-                    <td>
-                      {index+1}
-                    </td>
-                    <td>
-                      {item.score}
-                    </td>
-                    <td>
-                      {item.grade}
-                    </td>
-                  </tr>
-                )
-              })
-            }
+          {
+            studentReport.map(function(item, index) {
+              studentNumber = index+1
+              return (
+                <tr key={studentNumber}>
+                  <td>
+                    {studentNumber}
+                  </td>
+                  <td>
+                    {item.score}
+                  </td>
+                  <td>
+                    {item.grade}
+                  </td>
+                  <td>
+                    <button onClick={ rowRemoveHandler }> DELETE </button>
+                  </td>
+                </tr>
+              )
+              
+            })
+          }
         </tbody>
       </table>
 
