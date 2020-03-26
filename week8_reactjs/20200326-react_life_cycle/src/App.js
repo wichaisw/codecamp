@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import './App.css';
 
 class App extends React.Component {
@@ -11,8 +11,9 @@ class App extends React.Component {
       name: ""
     }
 
+    // this.addName = this.addName.bind(this)
     // this.deleteList = this.deleteList.bind(this);
-    this.addName = this.addName.bind(this)
+    // this.editList = this.editList.bind(this);
   }
 
   plusOne = () => {
@@ -54,19 +55,24 @@ class App extends React.Component {
     } );
   }
 
-  // deleteList = (e) => { 
-  //   e.preventDefault();
-  //   let newArr = this.state.arr;
-  //   newArr.filter(function(item, index) {
-  //     return item !== this.state.text
-  //   })
-  //   this.setState( {
-  //     arr: newArr
-  //   } )
-  // }
+  deleteList = (delIndex) => (e) => { 
+    e.preventDefault();
+    let deletedArray = this.state.arr.filter(function(item, index) {
+      return index !== delIndex;
+    });
+    this.setState( {arr: deletedArray} );
+  }
 
-
+  editList = (editIndex) => (e) => {
+    e.preventDefault();
+    let newText = prompt("enter new text");
+    let editedArray = this.state.arr.map( (item, index) => {
+      return (index === editIndex) ? newText : item;
+    });
+    this.setState( {arr: editedArray} );
+  }
   
+
   render () {
     return (
       <div className="App">
@@ -85,13 +91,11 @@ class App extends React.Component {
         <ul>
           {this.state.arr.map( (item, index) => {
             return (
-              <Fragment>
-                <li key={index}>
-                  {item}
-                  <button className="App__button" >delete</button>
-                </li>
-              </Fragment>
-            )
+              <li key={index}> {item} 
+                <button className="App__button" onClick={ this.deleteList(index) }>delete</button>
+                <button className="App__button" onClick={ this.editList(index) }>edit</button>
+              </li>
+            );
           })}          
         </ul>
 
