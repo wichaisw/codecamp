@@ -13,8 +13,6 @@ export default class MyWeb extends Component {
         <Route path="/facebook" component={ Facebook } />
         <Route path="/app" component={ App } />
       </Switch>
-
-
     )
   }
 }
