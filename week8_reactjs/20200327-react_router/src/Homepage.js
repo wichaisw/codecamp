@@ -15,6 +15,7 @@ export default class Homepage extends Component {
           <Layout>
               <Sider><Link to="./app">App</Link></Sider>
             <Content>
+              <Link to="./Login">Log In</Link><br />
               <Link to="./resume">Resume</Link><br />
               <Button type="primary" className="button"> <Link to="./facebook">Facebook</Link><br /> </Button>
             </Content>
