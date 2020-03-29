@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row"> 
-          <h1>Todo List</h1>
+          <h1>To-do List</h1>
           <input placeholder="Enter Todo item" onChange={this.onChangeInputValue} value={inputValue} className="form-control col-10 App" />
           <button type="button" onClick={this.addTodoItem}  className="col-2"> Add </button>
 
