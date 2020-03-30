@@ -7,7 +7,7 @@ class MytodoItem extends React.Component {
 
     return (
       <li key={id}>
-        {task}
+        id: {id} || {task}
         <button onClick={() => this.props.deleteTodoList(id)}>DELETE</button>
       </li>
     )
