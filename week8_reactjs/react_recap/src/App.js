@@ -20,23 +20,30 @@ class App extends React.Component {
     }
   }
   
-  onChangeInput = (e) => {
+  // fucntion for onChange Input,EditText, EditId using computed property
+  onChange = (state, targetValue) => {
     this.setState( {
-      inputValue: e.target.value
-    } )
+      [state]: targetValue
+    } );
   }
 
-  onChangeEditText = (e) => {
-    this.setState( {
-      editValue: e.target.value
-    } )
-  }
+  // onChangeInput = (e) => {
+  //   this.setState( {
+  //     inputValue: e.target.value
+  //   } )
+  // }
 
-  onChangeEditId = (e) => {
-    this.setState( {
-      editId: Number(e.target.value)
-    } )
-  }
+  // onChangeEditText = (e) => {
+  //   this.setState( {
+  //     editValue: e.target.value
+  //   } )
+  // }
+
+  // onChangeEditId = (e) => {
+  //   this.setState( {
+  //     editId: Number(e.target.value)
+  //   } )
+  // }
 
   addTodoList = () => {
     const inputValue = this.state.inputValue;
@@ -94,12 +101,12 @@ class App extends React.Component {
 
         <div className="row"> 
           <h1>To-do List</h1>
-            <input type="text" onChange={this.onChangeInput} value={this.state.inputValue} placeholder="Enter to-do List" />
+            <input type="text" onChange={(e) => this.onChange("inputValue", e.target.value)} value={this.state.inputValue} placeholder="Enter to-do List" />
             <button onClick={this.addTodoList}>Add</button>
             <br />
 
-            <input type="text" onChange={this.onChangeEditText} value={this.state.editValue} placeholder="Edit task here" />
-            <input type="text" onChange={this.onChangeEditId} value={this.state.editId} placeholder="enter id" />
+            <input type="text" onChange={(e) => this.onChange("editValue", e.target.value)} value={this.state.editValue} placeholder="Edit task here" />
+            <input type="text" onChange={(e) => this.onChange("editId", e.target.value)} value={this.state.editId} placeholder="enter id" />
             <button onClick={ this.editItemById }>Edit</button>
 
             <ul>
