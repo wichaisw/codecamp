@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import HookPractice from './HookPractice';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <HookPractice />
   </React.StrictMode>,
   document.getElementById('root')
 );
