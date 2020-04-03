@@ -60,6 +60,7 @@ function TodoList() {
       <div className="todolist">
 
         <section>
+          <h2>In Progress</h2>
           <div className="todolist__box">
             <ul>
               {displayInProgressTask}
@@ -77,6 +78,7 @@ function TodoList() {
         </div>
 
         <section>
+          <h2>Completed</h2>
           <div className="todolist__box">
             <ul>
               {displayFinishedTask}
