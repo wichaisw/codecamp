@@ -1,7 +1,22 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 function Carousel() {
 
-  
+
+  // ใช้ clearInterval clearTimeout ไม่ให้รันไปเรื่อยๆ
+  useEffect(() => {
+    console.log("useEffect")
+    return () => {
+      console.log("clean up")
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log("2nd useEffect")
+    return () => {
+      console.log("2nd clean up")
+    }
+  } )
+
   // use image from local image in public folder
   // const imgList = [
   //   "/image/wallpaper-0-kiryu.jpg",
