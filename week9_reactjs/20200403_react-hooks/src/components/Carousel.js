@@ -1,33 +1,43 @@
 import React, {useState} from 'react';
-
 function Carousel() {
+
   
-  const imgYakuza = [
-    "./image/wallpaper-0-kiryu-.jpg",
-    "./image/wallpaper-0-majima.jpg",
-    "./image/wallpaper-kiwami1-nishiki.jpg",
-    "./image/wallpaper-kiwami1-kazama.jpg",
-    "./image/wallpaper-kiwami1-majimi.jpg"
+  // use image from local image in public folder
+  // const imgList = [
+  //   "/image/wallpaper-0-kiryu.jpg",
+  //   "/image/wallpaper-0-majima.jpg",
+  //   "/image/wallpaper-kiwami1-nishiki.jpg",
+  //   "/image/wallpaper-kiwami1-kazama.jpg",
+  //   "/image/wallpaper-kiwami1-majimi.jpg"
+  // ]
+  
+  const imgList = [
+    "https://images8.alphacoders.com/942/thumb-1920-942722.jpg",
+    "https://images3.alphacoders.com/101/thumb-1920-1018186.jpg",
+    "https://images4.alphacoders.com/101/thumb-1920-1018185.jpg",
+    "https://images6.alphacoders.com/994/thumb-1920-994538.jpg",
+    "https://images5.alphacoders.com/994/thumb-1920-994542.jpg"
+
   ]
-  
-  const [imgUrl, setImgUrl] = useState(imgYakuza[0])
+
+  const [imgUrl, setImgUrl] = useState(imgList[0])
 
   function randomImg() {
     let randomIndex = Math.floor(Math.random()*4)
-    setImgUrl( imgYakuza[randomIndex])
+    setImgUrl( imgList[randomIndex])
   }
 
   return(
     <div>
       <figure>
-        <img src={ require(`${imgUrl}`) } alt="wallpaper" style={{width: "800px", margin: `2rem auto` }} /><br />
+        <img src={imgUrl} alt="wallpaper" style={{width: "800px", margin: `2rem auto` }} /><br />
       </figure>
       <div>
-        <button onClick={ () => setImgUrl(imgYakuza[0]) }>1</button>
-        <button onClick={ () => setImgUrl(imgYakuza[1]) }>2</button>
-        <button onClick={ () => setImgUrl(imgYakuza[2]) }>3</button>
-        <button onClick={ () => setImgUrl(imgYakuza[3]) }>4</button>
-        <button onClick={ () => setImgUrl(imgYakuza[4]) }>5</button>
+        <button onClick={ () => setImgUrl(imgList[0]) }>1</button>
+        <button onClick={ () => setImgUrl(imgList[1]) }>2</button>
+        <button onClick={ () => setImgUrl(imgList[2]) }>3</button>
+        <button onClick={ () => setImgUrl(imgList[3]) }>4</button>
+        <button onClick={ () => setImgUrl(imgList[4]) }>5</button>
         <br />
         <button onClick={randomImg}>random</button>
       </div> 
