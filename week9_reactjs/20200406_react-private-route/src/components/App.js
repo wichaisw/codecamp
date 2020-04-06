@@ -7,6 +7,7 @@ import VIPFeature from './pages/VIPfeature';
 import AdminFeature from './pages/AdminFeature';
 import PrivateRoutes from './private-routes/privateRoutes'
 import ConfigsRoute from '../configs/roles'
+import Register from './pages/Register';
 
 function App() {
   const [role, setRole] = useState('user'); // guest, user, admin
@@ -14,14 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/vip" component={VIPFeature}  />
-        <Route exact path="/admin" component={AdminFeature} />
-        <Redirect to="/" />
-      </Switch> */}
-      <PrivateRoutes role={role} />
+      {/* <PrivateRoutes role={role} /> */}
+      <Register />
     </div>
   );
 }

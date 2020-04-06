@@ -1,0 +1,7 @@
+.invalid-field {
+  border: 1px solid red;
+}
+
+.invalid-message {
+  color: red;
+}
