@@ -1,0 +1,114 @@
+.login__rightbody .login__row-in-right:nth-child(1) {
+  color: #333333;
+  font-size: 36px;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.34;
+}
+
+.login__rightbody .login__row-in-right:nth-child(2) {
+  font-size: 21px;
+  margin-bottom: 20px;
+  line-height: 126%;
+}
+
+.login__sign-up-form {
+  max-width: 100%;
+}
+
+.login__sign-up-form .login__text-input {
+  line-height: 1 !important;
+}
+
+.login__text-input {
+  font-size: 18px;
+  padding: 8px 10px;
+  border-color: #bdc7d8;
+  border-radius: 5px;
+  margin: 0;
+  /* width: 377px; */
+  width: 399px;
+  border: 1px solid #ccd0d5;
+  margin-bottom: 10px;
+}
+
+.login__rightbody--half-width {
+  /* width: 172px; */
+  width: 194px;
+  margin-right: 8px;
+}
+
+.login__input-topic {
+  color: #90949c;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-family: inherit;
+}
+
+.login__input-select {
+  font-family: inherit;
+  font-size: 13px;
+  background-color: #fff;
+  color: #1c1e21;
+  height: 30px;
+  padding: 5px;
+}
+
+.login__input-radio-box {
+  display: inline-block;
+  padding: 5px 0 5px 4px;
+  margin-right: 4px;
+}
+
+.login__input-label {
+  font-size: 18px;
+  color: #1d2129;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 18px;
+  padding: 0 10px 0 3px;
+}
+
+.login__terms-of-service {
+  color: #777;
+  font-size: 11px;
+  width: 316px;
+}
+
+.login__text--fb-blue {
+  color: #385898;
+}
+
+.login__sign-up-form .login__sign-up-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 19px;
+  min-width: 194px;
+  padding: 7px 20px;
+  text-align: center;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+.login__create-a-page {
+  border-top: 1px solid #dddfe2;
+  color: #666;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}

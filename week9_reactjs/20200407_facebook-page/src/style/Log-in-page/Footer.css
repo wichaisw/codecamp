@@ -1,0 +1,48 @@
+.login__footer {
+  width: 980px;
+  margin: 0 auto;
+  color: #737373;
+  padding-top: 30px;
+}
+
+.login__row-in-footer {
+  font-size: 12px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.login__language-list {
+  width: 980px;
+  border-bottom: 1px solid #dddfe2;
+  margin-bottom: 8px;
+}
+
+.login__services-list {
+  margin-left: -10px;
+}
+
+.login__language-list,
+.login__services-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.login__language-list li,
+.login__services-list li {
+  padding-left: 10px;
+
+}
+
+.login__language-list li:first-child {
+  padding-left: 0px;
+}
+
+.login__language-list li button {
+  cursor: pointer;
+  font-weight: bold;
+}

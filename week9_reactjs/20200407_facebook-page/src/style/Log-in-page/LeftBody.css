@@ -1,0 +1,53 @@
+.login__leftbody {
+  margin-right: 48px;
+}
+
+.login__leftbody .login__row-in-left:nth-child(1) {
+  color: #333333;
+  font-size: 36px;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.34;
+}
+
+.login__leftbody .login__row-in-left:nth-child(2) {
+  font-size: 21px;
+  margin-bottom: 20px;
+  line-height: 126%;
+}
+
+.login__leftbody .login__row-in-left:nth-child(3) {
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #dddfe2;
+  display: block;
+  transition: all .2s ease-out;
+  width: 160px;
+}
+
+.login__leftbody .login__row-in-left:nth-child(3) img {
+  align-items: center;
+  background-color: #f5f6f7;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: flex;
+  width: 160px;
+  height: 160px;
+}
+
+.login__leftbody .login__row-in-left:nth-child(3) div {
+  background-color: #fff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 160px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4b4f56;
+  text-decoration: none;
+}
