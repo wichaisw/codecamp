@@ -8,7 +8,7 @@ export default class Footer extends Component {
       <footer>
         <Col className="login__footer">
           <Row className="login__row-in-footer">
-            <ul className="login__language-list">
+            <ul className="login__language-list login__text--fb-blue">
             <li>English (UK)</li>
             <li>ภาษาไทย</li>
             <li>日本語</li>
@@ -23,8 +23,9 @@ export default class Footer extends Component {
             <li><button>+</button></li>
             </ul>
         </Row>
+        <div className="login__horizontal-line"></div>
         <Row className="login__row-in-footer">
-          <ul className="login__services-list">
+          <ul className="login__services-list login__text--fb-blue">
             <li><a href="#">Sign Up</a></li>
             <li><a href="#">Log In</a></li>
             <li><a href="#">Messenger</a></li>
