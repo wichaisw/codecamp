@@ -9,7 +9,7 @@ export default class NavBar extends Component {
         <Col className="login__top">
           <div>
             <a href="https://www.facebook.com/">
-            <i class="fb_logo img sp_Vgu5hh_52BR_1_5x sx_13437d"><u>Facebook</u></i>
+            <i class="fb_logo img sp_Vgu5hh_52BR_1_5x sx_13437d"><u>Fakebook</u></i>
             </a>
           </div>
 
