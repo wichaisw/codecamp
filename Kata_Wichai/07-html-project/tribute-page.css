@@ -1,0 +1,29 @@
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  margin: -0.5rem 0 0.7rem 0;
+}
+
+#img-div {
+  text-align: center;
+  width: 40%;
+  max-width: 35rem;
+  height: auto;
+}
+
+#image {
+  width: 100%;
+}
+
+#tribute-info {
+  width: 70%;
+}
+
+#tribute-quote {
+  font-size: larger;
+  margin-left: 7rem;
+}
