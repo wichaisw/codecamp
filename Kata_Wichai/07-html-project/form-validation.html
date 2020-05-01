@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./form-validation.css">
+  <title>Form Validation Project</title>
+</head>
+<body>
+  <h1 class="form__header">A Simple Form</h1>
+  <h3 class="form__description"><i>Form Fundamentals</i></h3>
+  <form action="#" id="simple-form" method="GET" autocomplete="on">
+    <fieldset id="customer-info-field">
+      <legend>Customer Info</legend>
+      <label for="name">Name: </label>
+      <input type="text" name="name"" id="name" placeholder="Enter your name" autofocus required>
+      <br>
+      <br>
+      <label for="phone-number">Telephone:</label>
+      <input type="number" name="phone-number" id="phone-number" placeholder="Pattern: 1-234-567-8910" required 
+        pattern="([0-9]{1}(-[0-9]{3})(-[0-9]{3})(-[0-9]{4}))">
+      <br>
+      <br>
+      <label for="email">Email address:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email address" multiple size="50" required>
+      <br>
+      <br>
+    </fieldset>
+    <fieldset id="books-field">
+      <legend>Books</legend>
+      <label for="books-item">
+        <input type="text" name="books-item" id="books-item" list="books">
+        <datalist id="books">
+          <option value="Predictably Irrational by Dan Ariely">
+          <option value="AI Superpower by Kai Fu Lee">
+          <option value="Stumbling on Happiness by Dan Gilbert">
+          <option value="The Great Gatsby by F. Scott Fitzgerald">
+          <option value="Catcher in the Rye by J. D. Salinger">
+        </datalist>
+      </label>
+      <label for="books-quantity">Quantity (Maximum 5):</label>
+      <input type="number" name="books-quantity" id="books-quantity" min="1" max="5" placeholder="choose your quantity">
+      <br>
+      <br>
+    </fieldset>
+    <button form="simple-form" id="simple-form-button">Submit</button>
+  </form>
+  <p class="form__footer">©2011 Acme United. All rights reserved.</p>
+
+</body>
+</html>

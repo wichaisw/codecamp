@@ -1,0 +1,34 @@
+.form__header {
+  color: #00008b;
+  margin: 0;
+
+}
+
+.form__description {
+  color: #A99AFF;
+  margin: 0;
+}
+
+#customer-info-field label,
+#books-item  {
+  margin-left: 3.5rem;
+}
+
+#customer-info-field input,
+#books-item {
+  width: 40%;
+}
+
+#books-quantity {
+  width: 10%;
+}
+
+
+
+#simple-form-button {
+  margin: 2px;
+}
+
+.form__footer {
+  margin-left: 3.5rem;
+}
