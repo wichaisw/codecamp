@@ -1,5 +1,6 @@
 const express = require('express');
-const db = require('./models')
+const db = require('./models');
+const cors = require('cors')
 
 const app = express(); // สร้าง express app
 // Express จัดการ http request
@@ -8,6 +9,7 @@ const studentRoute = require('./routes/student.js');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors())
 
 app.get('/hello', (req, res) => {
   res.send('<h1>hello world</h1>');
