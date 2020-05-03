@@ -1,0 +1,8 @@
+.editModal {
+  position: absolute;
+  top: 0;
+  background-color: #7479c8;
+  margin: 30vh auto;
+  padding: 2rem;
+  border-radius: 10px;
+}
