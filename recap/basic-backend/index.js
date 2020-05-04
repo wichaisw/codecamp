@@ -6,6 +6,11 @@ const app = express(); // สร้าง express app
 // Express จัดการ http request
 
 const studentRoute = require('./routes/student.js');
+const userRoute = require('./routes/user.js');
+
+// import passport มาใช้
+require('./config/passport/passport.js')
+
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -26,6 +31,7 @@ app.post('/add', (req, res) => {
 });
 
 app.use('/student', studentRoute);
+app.use('/user', userRoute);
 
 // สั่งให้ sequelize ไป sync database ให้ตรงกับโมเดล
 // เอา express App ที่สร้างไปจัดการ http request ที่พอร์ต 8000
