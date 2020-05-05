@@ -46,7 +46,8 @@ const loginUser = async(req, res) => {
     if(isSuccess) {
       // ใส่ข้อมูลที่จะแนบไปกับ token ใน obj ชื่อ payload
       const payload = {
-        id: user.id
+        id: user.id,
+        name: user.name
       }
 
       // generate โทเคนที่มีอายุ 3600 วินาที มี supersecret เป็น codecamp5 และส่ง payload ให้แนบไปกับโทเคนด้วย
