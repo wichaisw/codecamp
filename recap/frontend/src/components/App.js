@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
-import axios from 'axios';
+import axios from '../config/axios';
 import EditModal from './EditModal';
+import LoginForm from './LoginForm';
+import jwtDecode from 'jwt-decode';
 
 function App() {
   
@@ -11,9 +13,22 @@ function App() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showModal, setShowModal] = useState('none');
   const [editId, setEditId] = useState(null);
+  const [isLogin, setIsLogin] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+
+  useEffect(() => {
+    fetchData();
+    const token = localStorage.getItem('ACCESS_TOKEN');
+    if (token) {
+      const user = jwtDecode(token);
+      console.log(user)
+      setUserInfo(user);
+      setIsLogin(true);
+    }
+  }, [])
 
   const fetchData = async() => {
-    const result = await axios.get('http://localhost:8000/student');
+    const result = await axios.get('/student');
     console.log(result.data)
     setStudents(result.data)
   }
@@ -24,14 +39,16 @@ function App() {
       age,
       number: phoneNumber
     }
-    await axios.post('http://localhost:8000/student', body);
+    await axios.post('/student', body);
     // setStudents(result.data)
     fetchData()
     alert("A new student is added")
   }
 
   const deleteStudentById = async(id) => {
-    await axios.delete(`http://localhost:8000/student/${id}`);
+    const headers = {
+      Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`}
+    await axios.delete(`/student/${id}`, {headers: headers});
     fetchData();
     alert(`student id${id} has been deleted`)
   }
@@ -48,13 +65,16 @@ function App() {
       number: phoneNumber
     }
 
-    await axios.put(`http://localhost:8000/student/${id}`, body)
+    await axios.put(`/student/${id}`, body)
     alert(`student id${id} has been edited`)
     fetchData()
   }
 
   return (
     <div className="App student">
+      <h1>Login</h1>
+      <LoginForm isLogin={isLogin} setIsLogin={setIsLogin} userInfo={userInfo} setUserInfo={setUserInfo} />
+      <h1>Student List</h1>
       <table class="student__table">
         <thead>
           <tr>
@@ -73,8 +93,13 @@ function App() {
                 <td>{student.name}</td>
                 <td>{student.age}</td>
                 <td>{student.phone_number}</td>
-                <td><button onClick={() => openEditModal(student.id)}>Edit</button></td>
-                <td><button onClick={() => deleteStudentById(student.id)}>delete</button></td>
+                
+                {isLogin ? (
+                  <>
+                    <td><button onClick={() => openEditModal(student.id)}>Edit</button></td>
+                    <td><button onClick={() => deleteStudentById(student.id)}>delete</button></td>
+                  </>
+                ) : <td>Log in to use options</td>}  
               </tr>
               // <div style={{border: '1px solid #000000', width: '50%', margin: '0.7rem'}}>
               //   <div>ชื่อ: {element.name}</div>
@@ -85,7 +110,7 @@ function App() {
         </tbody>
       </table>
 
-      <button onClick={fetchData}>fetch data</button>
+      {/* <button onClick={fetchData}>fetch data</button> */}
       
       <div>
         <h1>Add a student</h1>
