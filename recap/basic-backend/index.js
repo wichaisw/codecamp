@@ -35,7 +35,7 @@ app.use('/user', userRoute);
 
 // สั่งให้ sequelize ไป sync database ให้ตรงกับโมเดล
 // เอา express App ที่สร้างไปจัดการ http request ที่พอร์ต 8000
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force:false}).then(() => {
   app.listen(8000, () => {
     console.log('server is running on port 8000.');
   });

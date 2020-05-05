@@ -10,6 +10,7 @@ const getAllUser = async(req,res) => {
 const registerUser = async(req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const name = req.body.name;
   
   const user = await db.User.findOne({ where: {username: username} });
 
@@ -21,7 +22,8 @@ const registerUser = async(req, res) => {
 
     await db.User.create({
       username,
-      password: hashedPassword
+      password: hashedPassword,
+      name
     })
 
     res.status(201).send({ message: "User's created" })
