@@ -3,15 +3,17 @@ import CounterPanel from '../components/CounterPanel';
 import './Counter.css';
 import { connect } from 'react-redux';
 
+import {increaseCounter, decreaseCounter, addCounter, subtractCounter} from '../store/actions'
+
 function Counter(props) {
   return (
     <div className='counter'>
       <div className='counter__display'>Counter: {props.ctr}</div>
       <div className='counter__button'>
-        <CounterPanel value='Increase' changeCounter={() => props.IncrementCtr()} />
-        <CounterPanel value='Decrease' changeCounter={() => props.DecrementCtr()} />
+        <CounterPanel value='Increase' changeCounter={props.IncrementCtr} />
+        <CounterPanel value='Decrease' changeCounter={props.DecrementCtr} />
         <CounterPanel value='Add 5' changeCounter={() => props.AddCtr(5)} />
-        <CounterPanel value='Substract 5' changeCounter={() => props.SubtractCtr(5)} />
+        <CounterPanel value='Subtract 5' changeCounter={() => props.SubtractCtr(5)} />
         
       </div>
     </div>
@@ -27,13 +29,24 @@ const mapStateToProps = state => {
   }
 }
 
-// ส่งไปให้ reducers แล้วเอากลับมาเป็น props
+
+// ย้ายไปไฟล์ actions
+// // ส่งไปให้ reducers แล้วเอากลับมาเป็น props
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     IncrementCtr: () => dispatch({type: 'INC_COUNTER'}),
+//     DecrementCtr: () => dispatch({type: 'DEC_COUNTER'}),
+//     AddCtr: (number) => dispatch({type: 'ADD_COUNTER', value: number}),
+//     SubtractCtr: (number) => dispatch({type: 'SUB_COUNTER', value: number})
+//   }
+// }
+
 const mapDispatchToProps = dispatch => {
   return {
-    IncrementCtr: () => dispatch({type: 'INC_COUNTER'}),
-    DecrementCtr: () => dispatch({type: 'DEC_COUNTER'}),
-    AddCtr: (number) => dispatch({type: 'ADD_COUNTER', value: number}),
-    SubtractCtr: (number) => dispatch({type: 'SUB_COUNTER', value: number})
+    IncrementCtr: (number) => dispatch(increaseCounter(number)),
+    DecrementCtr: (number) => dispatch(decreaseCounter(number)),
+    AddCtr: (number) => dispatch(addCounter(number)),
+    SubtractCtr: (number) => dispatch(subtractCounter(number))
   }
 }
 
