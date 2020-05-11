@@ -2,7 +2,7 @@ const initialState = {
   counter: 0
 };
 
-const reducer = (state = initialState, action) => {
+const reducers = (state = initialState, action) => {
   switch(action.type) {
     case 'INC_COUNTER':
       return {
@@ -29,4 +29,4 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-export default reducer;
+export default reducers;

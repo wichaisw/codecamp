@@ -3,18 +3,17 @@ import CounterPanel from '../components/CounterPanel';
 import './Counter.css';
 import { connect } from 'react-redux';
 
-import {increaseCounter, decreaseCounter, addCounter, subtractCounter} from '../store/actions'
+import {increaseCounter, decreaseCounter, addCounter, subtractCounter} from '../store/actions';
 
 function Counter(props) {
   return (
     <div className='counter'>
       <div className='counter__display'>Counter: {props.ctr}</div>
       <div className='counter__button'>
-        <CounterPanel value='Increase' changeCounter={props.IncrementCtr} />
-        <CounterPanel value='Decrease' changeCounter={props.DecrementCtr} />
-        <CounterPanel value='Add 5' changeCounter={() => props.AddCtr(5)} />
-        <CounterPanel value='Subtract 5' changeCounter={() => props.SubtractCtr(5)} />
-        
+        <CounterPanel value='Increase' changeCounter={props.incrementCtr} />
+        <CounterPanel value='Decrease' changeCounter={props.decrementCtr} />
+        <CounterPanel value='Add 5' changeCounter={() => props.addCtr(5)} />
+        <CounterPanel value='Subtract 5' changeCounter={() => props.subtractCtr(5)} />
       </div>
     </div>
   );
@@ -41,17 +40,18 @@ const mapStateToProps = state => {
 //   }
 // }
 
+// ส่งไปให้ reducers แล้วเอากลับมาเป็น props
 const mapDispatchToProps = dispatch => {
   return {
-    IncrementCtr: (number) => dispatch(increaseCounter(number)),
-    DecrementCtr: (number) => dispatch(decreaseCounter(number)),
-    AddCtr: (number) => dispatch(addCounter(number)),
-    SubtractCtr: (number) => dispatch(subtractCounter(number))
+    incrementCtr: (number) => dispatch(increaseCounter(number)),
+    decrementCtr: (number) => dispatch(decreaseCounter(number)),
+    addCtr: (number) => dispatch(addCounter(number)),
+    subtractCtr: (number) => dispatch(subtractCounter(number))
   }
 }
 
 // Counter คือ component ที่เราจะเชื่อม แล้ว export Counter ไปให้ App
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 
 // พอดึง store มาใส่ mapStateToProps ก็ connect เพื่อเอา state นั้นไปพาสเป็น props ให้ (Counter)
