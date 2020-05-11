@@ -1,0 +1,13 @@
+.counter-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #73ffd5;
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  /* background-color: #32ffc1; */
+  background-image: linear-gradient(#32ffc1, #35ffe4);
+  cursor: pointer;
+  /* box-shadow: inset -5px -5px 30px #3dfde4; */
+}

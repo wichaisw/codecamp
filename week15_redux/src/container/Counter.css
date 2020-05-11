@@ -1,0 +1,15 @@
+.counter__display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  background-image: linear-gradient(#c4ffed, #35ffe4);
+  margin: 0 0 2rem 0;  
+  font-size: larger;
+}
+
+.counter__button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
