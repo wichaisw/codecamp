@@ -3,6 +3,7 @@ import CounterPanel from '../components/CounterPanel';
 import './Counter.css';
 import { connect } from 'react-redux';
 
+import * as actionTypes from '../store/constants';
 import {increaseCounter, decreaseCounter, addCounter, subtractCounter} from '../store/actions';
 
 function Counter(props) {
@@ -58,8 +59,8 @@ const mapDispatchToProps = dispatch => {
     decrementCtr: (number) => dispatch(decreaseCounter(number)),
     addCtr: (number) => dispatch(addCounter(number)),
     subtractCtr: (number) => dispatch(subtractCounter(number)),
-    onSaveResult: (ctr) => dispatch({type: 'STORE_RESULT', counter: ctr}),
-    onDeleteResult: (targetId) => dispatch({type: 'DELETE_RESULT', id: targetId})
+    onSaveResult: (ctr) => dispatch({type: actionTypes.STORE_RESULT , counter: ctr}),
+    onDeleteResult: (targetId) => dispatch({type: actionTypes.DELETE_RESULT, id: targetId})
   }
 }
 
