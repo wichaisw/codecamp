@@ -5,11 +5,13 @@ const increaseCounter = () => ({type: actionTypes.INC_COUNTER});
 const decreaseCounter = () => ({type: actionTypes.DEC_COUNTER});
 const addCounter = (number) => ({type: actionTypes.ADD_COUNTER, value: number});
 const subtractCounter = (number) => ({type: actionTypes.SUB_COUNTER, value: number});
+const resetCounter = () => ({type: actionTypes.RESET_COUNTER});
 
 
 export {
   increaseCounter,
   decreaseCounter,
   addCounter,
-  subtractCounter
+  subtractCounter,
+  resetCounter
 }

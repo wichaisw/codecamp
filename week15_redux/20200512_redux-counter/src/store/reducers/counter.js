@@ -26,6 +26,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         counter: state.counter - action.value
       }
+    case actionTypes.RESET_COUNTER:
+      return {
+        ...state,
+        counter: initialState.counter
+      }
     
     default:
       return state
