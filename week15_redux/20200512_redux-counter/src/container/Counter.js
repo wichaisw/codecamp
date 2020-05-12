@@ -17,10 +17,11 @@ function Counter(props) {
         <CounterPanel value='Subtract 5' changeCounter={() => props.subtractCtr(5)} />
       </div>
       <hr />
-      <button onClick={props.onSaveResult}>save result</button>
+      <button onClick={() => props.onSaveResult(props.ctr)}>save result</button>
       <ul className='counter__results'>
         {props.results.map((result) => {
-          return <li key={result.id} onClick={() => props.onDeleteResult(result.id)}>{result.value}</li>
+          // console.log(result)
+          return <li onClick={() => props.onDeleteResult(result.id)}>{result.counter}</li>
         })}
       </ul>
     </div>
@@ -32,8 +33,9 @@ function Counter(props) {
 const mapStateToProps = state => {
   // console.log(state);
   return {
-    ctr: state.counter,
-    results: state.results
+    // store.reducerตัวไหน.state ถ้าไม่ combineReducer ก็ state.counter ได้เลย
+    ctr: state.ctr.counter,
+    results: state.res.results
   }
 }
 
@@ -56,7 +58,7 @@ const mapDispatchToProps = dispatch => {
     decrementCtr: (number) => dispatch(decreaseCounter(number)),
     addCtr: (number) => dispatch(addCounter(number)),
     subtractCtr: (number) => dispatch(subtractCounter(number)),
-    onSaveResult: (number) => dispatch({type: 'STORE_RESULT', value: number}),
+    onSaveResult: (ctr) => dispatch({type: 'STORE_RESULT', counter: ctr}),
     onDeleteResult: (targetId) => dispatch({type: 'DELETE_RESULT', id: targetId})
   }
 }
