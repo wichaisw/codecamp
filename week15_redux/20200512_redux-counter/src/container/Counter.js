@@ -8,6 +8,7 @@ import {increaseCounter, decreaseCounter, addCounter, subtractCounter} from '../
 function Counter(props) {
   return (
     <div className='counter'>
+      {/* {console.log(props.ctr) ส่งมาจาก mapStateToProps  */}
       <div className='counter__display'>Counter: {props.ctr}</div>
       <div className='counter__button'>
         <CounterPanel value='Increase' changeCounter={props.incrementCtr} />
@@ -15,6 +16,13 @@ function Counter(props) {
         <CounterPanel value='Add 5' changeCounter={() => props.addCtr(5)} />
         <CounterPanel value='Subtract 5' changeCounter={() => props.subtractCtr(5)} />
       </div>
+      <hr />
+      <button onClick={props.onSaveResult}>save result</button>
+      <ul className='counter__results'>
+        {props.results.map((result) => {
+          return <li key={result.id} onClick={() => props.onDeleteResult(result.id)}>{result.value}</li>
+        })}
+      </ul>
     </div>
   );
 }
@@ -22,9 +30,10 @@ function Counter(props) {
 // pass state มาจาก store ซึ่งมาจาก reducers
 // state ตรงนี้คือ store.getState()
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return {
-    ctr: state.counter
+    ctr: state.counter,
+    results: state.results
   }
 }
 
@@ -46,7 +55,9 @@ const mapDispatchToProps = dispatch => {
     incrementCtr: (number) => dispatch(increaseCounter(number)),
     decrementCtr: (number) => dispatch(decreaseCounter(number)),
     addCtr: (number) => dispatch(addCounter(number)),
-    subtractCtr: (number) => dispatch(subtractCounter(number))
+    subtractCtr: (number) => dispatch(subtractCounter(number)),
+    onSaveResult: (number) => dispatch({type: 'STORE_RESULT', value: number}),
+    onDeleteResult: (targetId) => dispatch({type: 'DELETE_RESULT', id: targetId})
   }
 }
 
