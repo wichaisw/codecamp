@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { createLogger } from 'redux-logger';
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
 
@@ -13,7 +14,10 @@ const rootReducer = combineReducers({
   res: resultReducer
 })
 
-const store = createStore(rootReducer);
+const logger = createLogger();
+
+// ใช้ logger เป็น middleware ช่วยแสดงความเปลี่ยนแปลงของ redux store
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(
   <React.StrictMode>
