@@ -3,21 +3,35 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
 
 // Middleware
-const loggerMiddleware = store => {
+const loggerMiddleware1 = store => {
   return next => {
     return action => {
-      console.log('[Middleware] dispatching', action)
+      console.log('[Middleware]1 dispatching', action)
       next(action)
+      console.log("1", store.getState())
     }
   }
 }
+
+const loggerMiddleware2 = store => {
+  return next => {
+    return action => {
+      console.log('[Middleware]2 dispatching', action)
+      next(action)
+      console.log("2", store.getState())
+    }
+  }
+}
+
+// redux dev tool
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   ctr: counterReducer,
@@ -27,7 +41,7 @@ const rootReducer = combineReducers({
 const logger = createLogger();
 
 // ใช้ logger เป็น middleware ช่วยแสดงความเปลี่ยนแปลงของ redux store
-const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(loggerMiddleware1, loggerMiddleware2)));
 
 ReactDOM.render(
   <React.StrictMode>
