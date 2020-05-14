@@ -62,7 +62,7 @@ const mapDispatchToProps = dispatch => {
     addCtr: (number) => dispatch(actionCreators.addCounter(number)),
     subtractCtr: (number) => dispatch(actionCreators.subtractCounter(number)),
     onResetCtr: () => dispatch(actionCreators.resetCounter()),
-    onSaveResult: (ctr) => dispatch(actionCreators.saveResult(ctr)),
+    onSaveResult: (ctr) => dispatch(actionCreators.AsycnSaveResult(ctr)),
     onDeleteResult: (targetId) => dispatch(actionCreators.deleteResult(targetId))
   }
 }

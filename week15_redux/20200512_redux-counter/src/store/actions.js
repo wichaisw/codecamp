@@ -6,9 +6,17 @@ const decreaseCounter = () => ({type: actionTypes.DEC_COUNTER});
 const addCounter = (number) => ({type: actionTypes.ADD_COUNTER, value: number});
 const subtractCounter = (number) => ({type: actionTypes.SUB_COUNTER, value: number});
 const resetCounter = () => ({type: actionTypes.RESET_COUNTER});
-const saveResult = (ctr) => ({type: actionTypes.STORE_RESULT , counter: ctr});
+const AsycnSaveResult = (ctr) => {
+  return dispactch => {
+    setTimeout(() => {
+      dispactch(saveResult(ctr))
+    }, 2000)
+  }
+} 
+
 const deleteResult = (targetId) => ({type: actionTypes.DELETE_RESULT, id: targetId});
 
+const saveResult = (ctr) => ({type: actionTypes.STORE_RESULT , counter: ctr});
 
 // export const increaseCounter = () => {
 //   return {
@@ -22,6 +30,6 @@ export {
   addCounter,
   subtractCounter,
   resetCounter,
-  saveResult,
+  AsycnSaveResult,
   deleteResult
 }
