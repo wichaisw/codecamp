@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import * as actionTypes from '../store/constants';
 import {increaseCounter, decreaseCounter, addCounter, subtractCounter, resetCounter} from '../store/actions';
+import * as actionCreators from '../store/actions';
 
 function Counter(props) {
   return (
@@ -56,13 +57,13 @@ const mapStateToProps = state => {
 // ส่งไปให้ reducers แล้วเอากลับมาเป็น props
 const mapDispatchToProps = dispatch => {
   return {
-    incrementCtr: (number) => dispatch(increaseCounter(number)),
-    decrementCtr: (number) => dispatch(decreaseCounter(number)),
-    addCtr: (number) => dispatch(addCounter(number)),
-    subtractCtr: (number) => dispatch(subtractCounter(number)),
-    onResetCtr: (number) => dispatch(resetCounter(number)),
-    onSaveResult: (ctr) => dispatch({type: actionTypes.STORE_RESULT , counter: ctr}),
-    onDeleteResult: (targetId) => dispatch({type: actionTypes.DELETE_RESULT, id: targetId})
+    incrementCtr: () => dispatch(actionCreators.increaseCounter()),
+    decrementCtr: () => dispatch(actionCreators.decreaseCounter()),
+    addCtr: (number) => dispatch(actionCreators.addCounter(number)),
+    subtractCtr: (number) => dispatch(actionCreators.subtractCounter(number)),
+    onResetCtr: () => dispatch(actionCreators.resetCounter()),
+    onSaveResult: (ctr) => dispatch(actionCreators.saveResult(ctr)),
+    onDeleteResult: (targetId) => dispatch(actionCreators.deleteResult(targetId))
   }
 }
 
