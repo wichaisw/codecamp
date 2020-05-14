@@ -9,6 +9,16 @@ import { createLogger } from 'redux-logger';
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
 
+// Middleware
+const loggerMiddleware = store => {
+  return next => {
+    return action => {
+      console.log('[Middleware] dispatching', action)
+      next(action)
+    }
+  }
+}
+
 const rootReducer = combineReducers({
   ctr: counterReducer,
   res: resultReducer
@@ -17,7 +27,7 @@ const rootReducer = combineReducers({
 const logger = createLogger();
 
 // ใช้ logger เป็น middleware ช่วยแสดงความเปลี่ยนแปลงของ redux store
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
 
 ReactDOM.render(
   <React.StrictMode>
