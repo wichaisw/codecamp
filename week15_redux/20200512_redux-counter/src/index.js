@@ -9,6 +9,8 @@ import { createLogger } from 'redux-logger';
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
 import thunk from 'redux-thunk';
+import { loadState, saveState } from './store/storeServices';
+
 
 // Middleware
 const loggerMiddleware1 = store => {
@@ -31,18 +33,29 @@ const loggerMiddleware2 = store => {
   }
 }
 
-// redux dev tool
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 const rootReducer = combineReducers({
   ctr: counterReducer,
   res: resultReducer
 })
 
+// redux dev tool
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const persistState = loadState();
+
 const logger = createLogger();
 
 // ใช้ logger เป็น middleware ช่วยแสดงความเปลี่ยนแปลงของ redux store
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(loggerMiddleware1, loggerMiddleware2, thunk)));
+const store = createStore(
+  rootReducer, 
+  persistState,
+  composeEnhancers(applyMiddleware(loggerMiddleware1, loggerMiddleware2, thunk))
+);
+
+// persistState โหลดใหม่ ข้อมูลไม่หาย
+store.subscribe(() => {
+  saveState(store.getState());
+})
 
 ReactDOM.render(
   <React.StrictMode>
