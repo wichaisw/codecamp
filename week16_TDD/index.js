@@ -1,13 +1,16 @@
-const handleNameList = nameList => {
+const handleNameList = (nameList) => {
   let message = 'Hello, ';
 
-  if (nameList.length === 2) {
-    return message = message + `${nameList[0]} and ${nameList[1]}.`
-  } else {
+
+  if (nameList.length === 1) {
+    return message + `${nameList[0]}.`;
+  } else if (nameList.length === 2) {
+    return message = message + `${nameList[0]} and ${nameList[1]}.`;
+  } else if(nameList.length > 2) {
     for (let i = 0; i < nameList.length - 1; i++) {
       message = message + `${nameList[i]}, `;
     }
-    message = message + `and ${nameList[nameList.length - 1]}.`
+    message = message + `and ${nameList[nameList.length - 1]}.`;
   }
   return message;
 }
