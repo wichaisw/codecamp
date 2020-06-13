@@ -1,19 +1,19 @@
-module.exports = (sequelize, Datatypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Counter = sequelize.define(
-    'counter', 
+    "counter",
     {
       current: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
       },
     },
     {
-      timestamps: false
+      timestamps: false,
     }
   );
 
-  Counter.associate = models => {
+  Counter.associate = (models) => {
     Counter.belongsTo(models.user, { foreignKey: "user_id" });
-  }
+  };
 
   return Counter;
-}
+};

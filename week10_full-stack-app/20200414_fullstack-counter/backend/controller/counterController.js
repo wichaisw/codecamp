@@ -1,16 +1,20 @@
-let counter = 0;
+const db = require("../models");
 
-getCurrentCounter = (req, res) => {
-  res.send(String(counter));
-}
+const getCurrentCounter = async (req, res) => {
+  const counter = await db.counter.findOne({ where: { user_id: req.user.id } });
+  res.send(String(counter.current));
+};
 
-updateCounter = (req, res) => {
+const updateCounter = async (req, res) => {
   const newCounter = req.body.counter;
-  counter = newCounter;
-  res.send(String(counter));
-}
+  await db.counter.update(
+    { current: newCounter },
+    { where: { user_id: req.user.id } }
+  );
+  res.send(String("Success"));
+};
 
 module.exports = {
   getCurrentCounter,
-  updateCounter
-}
+  updateCounter,
+};
