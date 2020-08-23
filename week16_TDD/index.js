@@ -1,11 +1,35 @@
-const handleNameList = (nameList) => {
-  let message = 'Hello, ';
 
+const handleShoutedNameList = (nameList) => {
+  let message = 'HELLO, ';
 
   if (nameList.length === 1) {
     return message + `${nameList[0]}.`;
   } else if (nameList.length === 2) {
     return message = message + `${nameList[0]} and ${nameList[1]}.`;
+  } else if(nameList.length > 2) {
+    for (let i = 0; i < nameList.length - 1; i++) {
+      message = message + `${nameList[i]}, `;
+    }
+    message = message + `and ${nameList[nameList.length - 1]}.`;
+  }
+  return message;
+}
+
+const handleNameList = (nameList) => {
+  let message = 'Hello, ';
+  let normalName = nameList.filter((item) => {
+    return name !== name.toUpperCase()
+  })
+  let ShoutedName = nameList.filter((item) => {
+    return name === name.toUpperCase()
+  })
+
+  if (nameList.length === 1) {
+    return message + `${nameList[0]}.`;
+  } else if (nameList.length === 2) {
+
+    return message = message + `${normal[0]} and ${nameList[1]}.`;
+
   } else if(nameList.length > 2) {
     for (let i = 0; i < nameList.length - 1; i++) {
       message = message + `${nameList[i]}, `;
